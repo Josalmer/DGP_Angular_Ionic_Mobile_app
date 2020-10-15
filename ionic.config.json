@@ -1,0 +1,7 @@
+{
+  "name": "valeApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

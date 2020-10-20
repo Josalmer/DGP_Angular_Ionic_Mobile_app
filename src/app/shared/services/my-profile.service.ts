@@ -12,8 +12,8 @@ export class MyProfileService {
     private http: HttpClient
   ) { }
 
-  getUserProfile(): Observable<any> {
-    return this.http.get('ruta');
+  getUserProfile(id: string): Observable<any> {
+    return this.http.get('users/' + id);
   }
 
   getMockUserProfile(): Observable<any> {

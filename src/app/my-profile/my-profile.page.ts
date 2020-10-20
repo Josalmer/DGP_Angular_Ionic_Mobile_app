@@ -9,6 +9,7 @@ import { ToastAlertService } from '../shared/services/toast-alert.service';
 export class MyProfilePage implements OnInit {
 
   myProfile: any;
+  id = '5f8ebfc1628dd01a5aac1096';
 
   constructor(
     private profileService: MyProfileService,
@@ -24,7 +25,7 @@ export class MyProfilePage implements OnInit {
   }
 
   loadUserProfile(): void {
-    this.profileService.getMockUserProfile().subscribe(
+    this.profileService.getUserProfile(this.id).subscribe(
       response => {
         console.log(response);
         this.myProfile = response.user;

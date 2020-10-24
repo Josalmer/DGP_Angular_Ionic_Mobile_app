@@ -25,15 +25,18 @@ export class MyProfilePage implements OnInit {
   }
 
   loadUserProfile(): void {
-    this.profileService.getUserProfile(this.id).subscribe(
-      response => {
-        console.log(response);
-        this.myProfile = response.user;
-      },
-      error => {
-        this.toastAlert.presentToast('Se ha producido un error: ' + error.details, 'danger');
-      }
-    );
+    // this.profileService.getUserProfile(this.id).subscribe(
+    //   response => {
+    //     console.log(response);
+    //     this.myProfile = response.user;
+    //   },
+    //   error => {
+    //     this.toastAlert.presentToast('Se ha producido un error: ' + error.details, 'danger');
+    //   }
+    // );
+
+    this.myProfile = this.profileService.getMockUserProfile();
+
   }
 
 }

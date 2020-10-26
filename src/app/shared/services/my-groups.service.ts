@@ -4,27 +4,27 @@ import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 
 @Injectable({
-	providedIn: 'root'
+  providedIn: 'root'
 })
 export class MyGroupsService {
-	constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-	getGroupsByUser(id: string): Observable<any> {
-		return this.http.get('XXX/' + id);
-	}
+  getGroupsByUser(): Observable<any> {
+    return this.http.get('XXX');
+  }
 
-	getGroupChat(id: string, groupId: string): Observable<any> {
-		return;
-	}
+  getGroupChat(id: string, groupId: string): Observable<any> {
+    return;
+  }
 
-	getMockGroups(): any {
-		let groups = [
-			{ name: 'Grupo Actividades 1', participants: 31, messages: 10 },
-			{ name: 'Grupo Apoyo 3', participants: 20, messages: 5 },
-			{ name: 'Grupo Centro', participants: 53, messages: 45 },
-			{ name: 'Grupo La Chana', participants: 45, messages: 32 }
-		];
+  getMockGroups(): Observable<any> {
+    const groups = [
+      { name: 'Grupo Actividades 1', participants: 31, messages: 10 },
+      { name: 'Grupo Apoyo 3', participants: 20, messages: 5 },
+      { name: 'Grupo Centro', participants: 53, messages: 45 },
+      { name: 'Grupo La Chana', participants: 45, messages: 32 }
+    ];
 
-		return groups;
-	}
+    return of(groups);
+  }
 }

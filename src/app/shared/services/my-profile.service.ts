@@ -16,13 +16,8 @@ export class MyProfileService {
     return this.http.get('users/' + id);
   }
 
-  // getMockUserProfile(): Observable<any> {
-  //   return of({"user": {"username": "Jose", "age": 31} });
-  // }
-
-
-  getMockUserProfile(): any{
-    return {"user": {"username": "Jose", "age": 31} };
+  getMockUserProfile(id: string): Observable<any> {
+    return of({"user": {"username": "Jose", "age": 31} });
   }
 
 }

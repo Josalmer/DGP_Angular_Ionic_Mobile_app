@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MyProfileService } from '../shared/services/my-profile.service';
 import { MyTaskListService } from '../shared/services/my-task-list.service';
 import { ToastAlertService } from '../shared/services/toast-alert.service';
 
@@ -24,18 +25,15 @@ export class MyTaskListPage implements OnInit {
   }
 
   loadUserTaskList(): void {
-    // this.taskListService.getTaskList(/*COMO COGEMOS EL ID DEL USUARIO QUE ESTARÁ EN EL COMPONENTE MY-PROFILE */).subscribe(
-    //   response => {
-    //     console.log(response);
-    //     this.myTaskList = response.tasks;
-    //   },
-    //   error => {
-    //     this.toastAlert.presentToast('Se ha producido un error en la carga de tareas: ' + error.details, 'danger');
-    //   }
-    // );
-
-    this.myTaskList = this.taskListService.getMockTaskList(/*Debería recibir el id de usuario? */);
-
+    this.taskListService.getMockTaskList().subscribe(
+      response => {
+        console.log(response);
+        this.myTaskList = response;
+      },
+      error => {
+        this.toastAlert.presentToast('Se ha producido un error en la carga de tareas: ' + error.details, 'danger');
+      }
+    );
   }
 
 }

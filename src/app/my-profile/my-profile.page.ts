@@ -16,11 +16,23 @@ export class MyProfilePage implements OnInit {
 		this.loadData();
 	}
 
-	loadData(): void {
-		this.loadUserProfile();
-	}
+  loadData(): void {
+    this.loadUserProfile();
+  }
 
-	loadUserProfile(): void {
-		this.profileService.getMockUserProfile();
-	}
+  loadUserProfile(): void {
+    // this.profileService.getUserProfile(this.id).subscribe(
+    //   response => {
+    //     console.log(response);
+    //     this.myProfile = response.user;
+    //   },
+    //   error => {
+    //     this.toastAlert.presentToast('Se ha producido un error: ' + error.details, 'danger');
+    //   }
+    // );
+
+    this.myProfile = this.profileService.getMockUserProfile();
+
+  }
+
 }

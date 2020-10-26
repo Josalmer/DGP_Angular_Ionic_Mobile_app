@@ -1,0 +1,12 @@
+<ion-card *ngFor="let task of myTasks;">
+    <ion-card-header>
+      <ion-card-title></ion-card-title>
+    </ion-card-header>
+    <ion-item>
+        <ion-icon name="walk" slot="start"></ion-icon>
+        <ion-label>{{task.title}}</ion-label>
+      </ion-item>
+    <ion-card-content>
+      {{task.description}}
+    </ion-card-content>
+  </ion-card>

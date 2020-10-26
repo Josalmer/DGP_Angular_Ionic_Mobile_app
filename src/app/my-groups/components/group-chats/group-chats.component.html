@@ -1,0 +1,10 @@
+<div *ngFor="let group of myGroups; let i = index;">
+    <ion-item [color]="i % 2 ? 'dark' : 'light'">
+        <ion-avatar slot="start">
+            <ion-icon name="people-circle-outline" [color]="i % 2 ? 'light' : 'dark'" size="large"></ion-icon>
+        </ion-avatar>
+        <ion-label [color]="i % 2 ? 'light' : 'dark'">
+            <h1>{{ group.name }}</h1>
+        </ion-label>
+    </ion-item>
+</div>

@@ -8,8 +8,8 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+        path: 'my-groups',
+        loadChildren: () => import('../my-groups/my-groups.module').then((m) => m.MyGroupsPageModule)
       },
       {
         path: 'my-tasks',
@@ -34,7 +34,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+	imports: [ RouterModule.forChild(routes) ],
+	exports: [ RouterModule ]
 })
 export class TabsPageRoutingModule {}

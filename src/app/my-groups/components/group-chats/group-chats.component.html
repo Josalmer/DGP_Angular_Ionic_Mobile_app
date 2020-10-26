@@ -1,0 +1,35 @@
+
+<div *ngFor="let group of myGroups; let even = odd; let odd=even;">
+    <ion-item *ngIf="even" color="secondary">
+        <ion-avatar slot="start">
+            <ion-icon name="people-circle-outline" color="dark" size="large"></ion-icon>
+        </ion-avatar>
+        <ion-label color="dark">
+            <h1>{{ group.name }}</h1>
+        </ion-label>
+    </ion-item>
+
+    <ion-item *ngIf="odd" color="dark">
+        <ion-avatar slot="start">
+            <ion-icon name="people-circle-outline" color="light" size="large"></ion-icon>
+        </ion-avatar>
+        <ion-label color="light">
+            <h1>{{ group.name }}</h1>
+        </ion-label>
+    </ion-item>
+</div>
+
+<!--<link rel="stylesheet" href="group-chats.page.scss">
+<div *ngFor="let group of myGroups; let odd=odd; let even=even;" [ngClass]="{even:even, odd:odd}">
+    <ion-item ng-class="even">
+        <ion-avatar slot="start">
+            <ion-icon name="people-circle-outline" color="dark" size="large"></ion-icon>
+        </ion-avatar>
+        <ion-label color="dark">
+            <h1>{{ group.name }}</h1>
+        </ion-label>
+    </ion-item>
+</div>
+
+-->
+

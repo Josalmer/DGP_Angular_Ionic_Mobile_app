@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MyProfileService } from '../shared/services/my-profile.service';
-import { ToastAlertService } from '../shared/services/toast-alert.service';
 
 @Component({
   selector: 'app-my-profile',
@@ -11,27 +10,11 @@ export class MyProfilePage implements OnInit {
   id = '5f8ebfc1628dd01a5aac1096';
 
   constructor(
-    private profileService: MyProfileService,
-    private toastAlert: ToastAlertService
+    private profileService: MyProfileService
     ) { }
 
   ngOnInit(): void {
-    this.loadData();
-  }
-
-  loadData(): void {
-    this.loadUserProfile();
-  }
-
-  loadUserProfile(): void {
-    this.profileService.getMockUserProfile(this.id).subscribe(
-      response => {
-        this.myProfile = response.user;
-      },
-      error => {
-        this.toastAlert.presentToast('Se ha producido un error: ' + error.details, 'danger');
-      }
-    );
+    this.myProfile = this.profileService.getCurrentUser();
   }
 
 }

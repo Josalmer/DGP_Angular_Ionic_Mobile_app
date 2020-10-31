@@ -61,7 +61,9 @@ export class LoginFormComponent {
     if (this.selectedAnimals.length < 6) {
       this.selectedAnimals.push(animal);
       if (this.selectedAnimals.length === 6) {
-        this.login();
+        setTimeout(() => {
+          this.login();
+        }, 1000);
       }
     }
   }

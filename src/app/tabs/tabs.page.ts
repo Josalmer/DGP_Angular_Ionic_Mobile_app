@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MyProfileService } from '../shared/services/my-profile.service';
-import { ToastAlertService } from '../shared/services/toast-alert.service';
 
 @Component({
   selector: 'app-tabs',
@@ -9,26 +8,14 @@ import { ToastAlertService } from '../shared/services/toast-alert.service';
 })
 export class TabsPage implements OnInit{
 
-  genre : string;
+  genre: string;
 
   constructor(
-    private profileService: MyProfileService,
-    private toastAlert: ToastAlertService
+    private profileService: MyProfileService
     ) { }
 
   ngOnInit(): void {
-    this.loadData();
-  }
-
-
- loadData() : void{
-    this.loadUserGenre();
-  }
-
-  loadUserGenre() :void{
-
-    this.genre = this.profileService.getUserGenre();
-
+    this.genre = this.profileService.getCurrentUser().genre;
   }
 
 }

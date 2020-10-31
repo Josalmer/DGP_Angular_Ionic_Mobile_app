@@ -19,7 +19,7 @@ export class LoginService {
   ) { }
 
   login(params: any): Observable<any> {
-    return this.http.post('login/', params).pipe(
+    return this.http.post('users/login', params).pipe(
       tap(res => this.saveToken(res))
     );
   }

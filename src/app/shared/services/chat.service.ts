@@ -4,26 +4,25 @@ import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 
 @Injectable({
-	providedIn: 'root'
+  providedIn: 'root'
 })
 export class ChatService {
-	constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-	getGroupsByUser(): Observable<any> {
-		return this.http.get('XXX');
-	}
+  getGroupMessages(groupId: string): Observable<any> {
+    return this.http.get('group_chat/' + groupId);
+  }
 
-	getMockedGroup(): Observable<any> {
-		const group = { name: 'Grupo 1' };
-		return of(group);
-	}
+  getTaskMessages(taskId: string): Observable<any> {
+    return this.http.get('task_chat/' + taskId);
+  }
 
-	getMockedMessages(): Observable<any> {
-		const messages = [
-			{ text: 'Buenos dias', sender: 'Paco' },
-			{ text: 'Hola', sender: 'Ana' },
-			{ text: '¿Como estais?', sender: 'Ana' }
-		];
-		return of(messages);
-	}
+  getMockedMessages(id: string): Observable<any> {
+    const messages = [
+      { text: 'Buenos dias', sender: 'Paco' },
+      { text: 'Hola', sender: 'Ana' },
+      { text: '¿Como estais?', sender: 'Ana' }
+    ];
+    return of(messages);
+  }
 }

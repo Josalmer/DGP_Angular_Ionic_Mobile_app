@@ -1,10 +1,21 @@
 import { NgModule } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 import { chatComponent } from './components/chat/chat.component';
-import { chatMessagesComponent } from './components/chat-messages/chat-message.component';
 
 @NgModule({
-	imports: [],
-	declarations: [ chatComponent, chatMessagesComponent ],
-	exports: [ chatComponent, chatMessagesComponent ]
+  imports: [
+    IonicModule,
+    CommonModule,
+    FormsModule
+  ],
+  declarations: [
+    chatComponent
+  ],
+  exports: [
+    chatComponent
+  ]
 })
-export class sharedModule {}
+export class sharedModule { }

@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { ChatService } from '../shared/services/chat.service';
+import { ChatService } from '../../services/chat.service';
 
 @Component({
 	selector: 'app-chat',
-	templateUrl: 'chat.page.html'
+	templateUrl: 'chat.component.html'
 })
-export class chatPage implements OnInit {
+export class chatComponent implements OnInit {
 	group: any;
-	messages: any;
+	messages = [];
 
 	constructor(private chatService: ChatService) {}
 

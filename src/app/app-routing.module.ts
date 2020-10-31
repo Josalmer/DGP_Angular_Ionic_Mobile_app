@@ -6,16 +6,15 @@ const routes: Routes = [
   {
     path: '', canActivate: [AuthGuard],
     // path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+    loadChildren: () => import('./tabs/tabs.module').then((m) => m.TabsPageModule)
   },
   {
-    path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then((m) => m.LoginModule)
   }
 ];
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
-  ],
+  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

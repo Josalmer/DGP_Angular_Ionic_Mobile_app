@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MyGroupsService } from '../shared/services/my-groups.service';
+import { Router } from '@angular/router';
+import { MyGroupsService } from '../../../shared/services/my-groups.service';
 
 @Component({
   selector: 'app-my-groups',
@@ -9,7 +10,8 @@ export class MyGroupsPage implements OnInit {
   myGroups: any;
 
   constructor(
-    private groupsService: MyGroupsService
+    private groupsService: MyGroupsService,
+    private router: Router
     ) { }
 
   ngOnInit(): void {
@@ -25,5 +27,9 @@ export class MyGroupsPage implements OnInit {
         alert(error);
       }
     );
+  }
+
+  navigateToGroup(id: string): void {
+    this.router.navigateByUrl('/tabs/my-groups/' + id);
   }
 }

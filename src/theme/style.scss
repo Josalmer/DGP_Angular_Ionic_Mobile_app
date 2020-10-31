@@ -1,9 +1,22 @@
-// GLOBAL
+/*********************************
+Global
+**********************************/
 
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.margin-10 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
+/*********************************
+My groups
+**********************************/
 
-// my-groups
 .even {
   color: dark;
 }
@@ -20,9 +33,8 @@ ion-item {
 	background-color: #6084bb;
 }
 
-
 /*********************************
-Barra de navegación
+Navigation
 **********************************/
 ion-tab-bar{
 
@@ -50,3 +62,31 @@ ion-tab-bar{
   background-color: #d9c7e0;
 }
 
+/*********************************
+Login
+**********************************/
+
+.animal-card {
+  max-width: 35%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.animal-card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; 
+  justify-content: center;
+}
+
+.selected-animals-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap; 
+  justify-content: center;
+}
+
+.selected-animal-card {
+  margin: 0;
+  max-width: 15%;
+}

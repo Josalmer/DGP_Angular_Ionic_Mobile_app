@@ -16,8 +16,8 @@ export class LoginService {
     private navCtrl: NavController
   ) { }
 
-  login(password: string): Observable<any> {
-    return this.http.get('login/' + password).pipe(
+  login(params: any): Observable<any> {
+    return this.http.post('login/', params).pipe(
       tap(res => this.saveToken(res))
     );
   }

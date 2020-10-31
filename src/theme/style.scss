@@ -1,4 +1,6 @@
-// GLOBAL
+/*********************************
+Global
+**********************************/
 
 .flex-center {
   display: flex;
@@ -11,7 +13,10 @@
   margin-bottom: 10px;
 }
 
-// my-groups
+/*********************************
+My groups
+**********************************/
+
 .even {
   color: dark;
 }
@@ -28,7 +33,38 @@ ion-item {
 	background-color: #6084bb;
 }
 
-// LOGIN
+/*********************************
+Navigation
+**********************************/
+ion-tab-bar{
+
+  height: 15vh;
+
+}
+
+.img-nav-bar{
+
+  width: 90%;
+  height: 90%;
+}
+
+
+.btn-grupos{
+  background-color: #adffad;
+}
+
+.btn-tareas{
+  background-color:#ebed89;
+}
+
+
+.btn-perfil{
+  background-color: #d9c7e0;
+}
+
+/*********************************
+Login
+**********************************/
 
 .animal-card {
   max-width: 35%;

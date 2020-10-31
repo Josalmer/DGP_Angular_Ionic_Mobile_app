@@ -8,6 +8,7 @@ import { of } from 'rxjs';
 })
 export class MyProfileService {
 
+
   constructor(
     private http: HttpClient
   ) { }
@@ -17,7 +18,11 @@ export class MyProfileService {
   }
 
   getMockUserProfile(id: string): Observable<any> {
-    return of({"user": {"username": "Jose", "age": 31} });
+    return of({"user": {"username": "Jose", "age": 31, "genre": "male"} });
+  }
+
+  getUserGenre() : string{
+    return "female";
   }
 
 }

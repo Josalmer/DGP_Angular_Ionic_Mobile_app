@@ -6,17 +6,22 @@ import { of } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class MyTaskListService {
+export class MyTasksService {
 
   constructor(
     private http: HttpClient
   ) { }
 
-  getUserTasks(): Observable<any> {
+  getTasks(): Observable<any> {
     return this.http.get('tasks');
   }
 
-  getMockTaskList(): Observable<any> {
+  getTaskById(id: string): Observable<any> {
+    return this.http.get('tasks/' + id);
+  }
+
+
+  getMockTasks(): Observable<any> {
     const arrayOfTasks = [];
     arrayOfTasks.push({"id": "0", "title":"¡Átatelos!", "description": "Tarea para atarse los zapatos"});
     arrayOfTasks.push({"id": "1", "title":"¡Foto, Foto!", "description": "Tarea para hacerse una foto de perfil"});
@@ -25,5 +30,24 @@ export class MyTaskListService {
 
     return of(arrayOfTasks);
   }
+
+
+
+  
+  getMockTaskById(id: string): Observable<any> {
+    const task = [
+      { title: "Tarea para atarse los zapatos", 
+        description: 'La tarea consiste en atarse los zapatos. ¡Debes atarte los zapatos y mandar una foto con el resultado final!!',
+        messages: [
+          {sender:'Tutor 1', text:'Hola, tienes alguna duda ?'},
+          {sender:'Alumno 1',text:'No gracias'},
+          ]
+      }
+    
+    ]
+    return of(task);
+
+  }
+
 
 }

@@ -39,7 +39,7 @@ Navigation
 
 ion-tab-bar{
 
-  height: 15vh;
+  height: 12vh;
 
 }
 
@@ -90,4 +90,36 @@ Login
 .selected-animal-card {
   margin: 0;
   max-width: 15%;
+}
+
+
+/*********************************
+Componente del chat
+**********************************/
+
+.chat-area-container{
+  position: absolute; 
+  bottom: 14%; 
+  width: 100%; 
+  height: 12vh;
+}
+
+.chat-main-container{
+  position: relative; 
+  height: 100%;
+
+}
+
+.chat-text-area{
+  background-color:#e5e3e3;
+  padding: 10px 10px;
+
+}
+
+.img-send-text-message{
+
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+
 }

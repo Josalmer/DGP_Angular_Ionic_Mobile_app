@@ -97,29 +97,40 @@ Login
 Componente del chat
 **********************************/
 
-.chat-area-container{
-  position: absolute; 
-  bottom: 14%; 
-  width: 100%; 
-  height: 12vh;
+.prueba{
+  height: 80%;
 }
 
 .chat-main-container{
-  position: relative; 
-  height: 100%;
+
+  height: 85%;
 
 }
 
-.chat-text-area{
-  background-color:#e5e3e3;
-  padding: 10px 10px;
+.toolbar-chat-container{
+  position: fixed;
+  height: 15%;
+  background-color: #d1d1d1;
 
+}
+
+.chat-col{
+  padding:0;
+
+}
+
+.message-input{
+margin-top: 5%;
+background-color: white;
+margin-left: 5%;
+width: 90%;
+border-radius: 20px;
 }
 
 .img-send-text-message{
 
   width: 80%;
   height: 80%;
-  margin: 0 auto;
+  margin: 5% auto 0 auto;
 
 }

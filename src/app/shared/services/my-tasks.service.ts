@@ -41,6 +41,12 @@ export class MyTasksService {
         messages: [
           {sender:'Tutor 1', text:'Hola, tienes alguna duda ?'},
           {sender:'Alumno 1',text:'No gracias'},
+          {sender:'Tutor 1',text:'Seguro?'},
+          {sender:'Alumno 1',text:'Si'},
+          {sender:'Tutor 1',text:'De verdad?'},
+          {sender:'Alumno 1',text:'Siuuuuuu'},
+          {sender:'Tutor 1',text:'¿Pur que?'},
+          {sender:'Alumno 1',text:'SIUUUUUUUUUUUUUUU'}
           ]
       }
     

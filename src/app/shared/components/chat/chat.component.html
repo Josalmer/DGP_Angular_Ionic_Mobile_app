@@ -1,5 +1,4 @@
-    <div class="chat-main-container">
-        <div>
+    <div class="chat-main-container" style="overflow: scroll;">
             <ion-item *ngFor="let message of messages; let i = index;">
                 <!-- <ion-avatar slot="start">
                     <ion-icon name="fotoPedirALaAPI" size="large"></ion-icon>
@@ -10,24 +9,19 @@
                     <h4>{{ message.timestamp }}</h4>
                 </ion-label>
             </ion-item>
-        </div>
         
     </div>
+    <div class="toolbar-chat-container">
+        <ion-row class="chat-area-container">
+            <ion-col class="chat-col" size="9">
+                <ion-input class="message-input" placeholder="Escribe tu mensaje..."></ion-input>
+            </ion-col>
+            <ion-col class="chat-col" size = "3">
+                <ion-img class="img-send-text-message ion-text-center" src="../assets/img/enviar-mail.png"></ion-img>
+            </ion-col>
+        </ion-row>
+    </div>
 
-    <ion-row class="chat-area-container">
-        <ion-col size="9">
-            <ion-item>
-                <ion-textarea class="chat-text-area" placeholder="Escribe tu mensaje..."></ion-textarea>
-            </ion-item>
-        </ion-col>
-        <ion-col size = "3">
-            <ion-img class="img-send-text-message ion-text-center" src="../assets/img/enviar-mail.png"></ion-img>
-        </ion-col>
-    </ion-row> 
-
-    
-
-   
 
 
 

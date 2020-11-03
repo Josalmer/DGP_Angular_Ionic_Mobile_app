@@ -30,4 +30,8 @@ export class LoginService {
     this.profileService.loadUserProfile().subscribe();
     this.navCtrl.navigateRoot(['/']);
   }
+
+  getPictograms(): Observable<any> {
+    return this.http.get('get-pictograms');
+  }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ToastAlertService } from 'src/app/shared/services/toast-alert.service';
 import { LoginService } from '../services/login.service';
 
@@ -6,35 +6,21 @@ import { LoginService } from '../services/login.service';
   selector: 'app-login-form',
   templateUrl: 'login-form.component.html'
 })
-export class LoginFormComponent {
+export class LoginFormComponent implements OnInit {
 
   selectedAnimals = [];
-
-  animals = [
-    { name: 'cerdo',
-      key: 'asd'
-    },
-    { name: 'perro',
-      key: 'bdf'
-    },
-    { name: 'gato',
-      key: 'erw'
-    },
-    { name: 'delfin',
-      key: 'ngf'
-    },
-    { name: 'leon',
-      key: 'asd'
-    },
-    { name: 'caballo',
-      key: 'ofd'
-    },
-  ];
+  animals: any;
 
   constructor(
     private loginService: LoginService,
     private alertService: ToastAlertService
   ) { }
+
+  ngOnInit(): void {
+    this.loginService.getPictograms().subscribe(
+      response => this.animals = response
+    );
+  }
 
   login(): void {
     let animalPassword = '';

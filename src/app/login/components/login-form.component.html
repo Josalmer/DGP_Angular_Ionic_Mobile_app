@@ -1,7 +1,7 @@
 <ion-row class="flex-center">
   <h2>Introduce tus animales</h2>
 </ion-row>
-<div class="animal-card-container">
+<div class="animal-card-container" *ngIf="animals">
   <ion-card class="animal-card" *ngFor="let animal of animals" (click)="addAnimal(animal)">
     <ion-img [src]="imgUrl(animal)"></ion-img>
   </ion-card>

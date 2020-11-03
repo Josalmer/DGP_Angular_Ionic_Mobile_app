@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-user-details',
@@ -7,12 +7,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class userDetailsComponent {
 
   @Input() myProfile: any;
-  @Output() refreshProfileEmitter = new EventEmitter();
 
   constructor(
   ) { }
-
-  refreshProfile(): void {
-    this.refreshProfileEmitter.emit();
-  }
 }

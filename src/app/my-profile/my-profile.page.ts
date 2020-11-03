@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
+import { LoginService } from '../login/services/login.service';
 import { MyProfileService } from '../shared/services/my-profile.service';
+import { SessionService } from '../shared/services/session.service';
 
 @Component({
   selector: 'app-my-profile',
@@ -7,19 +10,26 @@ import { MyProfileService } from '../shared/services/my-profile.service';
 })
 export class MyProfilePage implements OnInit {
   myProfile: any;
-  id = '5f8ebfc1628dd01a5aac1096';
 
   constructor(
-    private profileService: MyProfileService
+    private profileService: MyProfileService,
+    private navCtrl: NavController,
+    private loginService: LoginService,
+    private sessionService: SessionService
     ) { }
 
   ngOnInit(): void {
     this.myProfile = this.profileService.getCurrentUser();
   }
 
-
-  loadUserProfile(): void{
-    
+  async logout() {
+    this.loginService.logout().subscribe(
+      response => {
+        this.sessionService.clearAuthToken();
+        this.profileService.clearUser();
+        this.navCtrl.navigateRoot(['/login']);
+      }
+    );
   }
 
 }

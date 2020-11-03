@@ -1,4 +1,14 @@
-<h2>{{ myProfile.username }}</h2>
-<h3> {{ myProfile.age }} </h3>
-
-<ion-button color="tertiary" (click)="refreshProfile()">Recargar perfil</ion-button>
+<ion-row>
+  <ion-col>
+    <ion-row>
+      <ion-col class="flex-center">
+        <h2>{{ myProfile.username }}</h2>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="flex-center">
+        <h2> Edad: {{ myProfile.age }} </h2>
+      </ion-col>
+    </ion-row>
+  </ion-col>
+</ion-row>

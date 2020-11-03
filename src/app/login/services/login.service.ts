@@ -24,6 +24,10 @@ export class LoginService {
     );
   }
 
+  logout(): Observable<any> {
+    return this.http.delete('users/logout');
+  }
+
   saveToken = (res: any) => {
     const authToken = 'Bearer ' + res.token;
     this.sessionService.setAuthToken(authToken);

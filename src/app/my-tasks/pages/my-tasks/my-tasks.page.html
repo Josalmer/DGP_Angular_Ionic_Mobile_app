@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Mis Tareas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Mis Tareas </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-card *ngFor="let task of myTasks;">
+  <div (click)="navigateToTask(task.id)">
+  <ion-card-header>
+    <ion-card-title></ion-card-title>
+  </ion-card-header>
+  <ion-item>
+      <ion-icon name="walk" slot="start"></ion-icon>
+      <ion-label>{{task.title}}</ion-label>
+  </ion-item>
+ 
+  <ion-card-content>
+    {{task.description}}
+  </ion-card-content>
+  </div>
+</ion-card>

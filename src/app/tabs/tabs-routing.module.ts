@@ -13,7 +13,7 @@ const routes: Routes = [
       },
       {
         path: 'my-tasks',
-        loadChildren: () => import('../my-tasks/my-tasks.module').then((m) => m.MyTaskListPageModule)
+        loadChildren: () => import('../my-tasks/my-tasks.module').then((m) => m.MyTasksPageModule)
       },
       {
         path: 'my-profile',

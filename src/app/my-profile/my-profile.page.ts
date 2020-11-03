@@ -17,4 +17,9 @@ export class MyProfilePage implements OnInit {
     this.myProfile = this.profileService.getCurrentUser();
   }
 
+
+  loadUserProfile(): void{
+    
+  }
+
 }

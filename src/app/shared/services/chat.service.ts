@@ -9,12 +9,9 @@ import { of } from 'rxjs';
 export class ChatService {
   constructor(private http: HttpClient) { }
 
+  //Revisar ésto porque no sabemos aún el endpoint
   getGroupMessages(groupId: string): Observable<any> {
     return this.http.get('group_chat/' + groupId);
-  }
-
-  getTaskMessages(taskId: string): Observable<any> {
-    return this.http.get('task_chat/' + taskId);
   }
 
   getMockedMessages(id: string): Observable<any> {
@@ -25,4 +22,8 @@ export class ChatService {
     ];
     return of(messages);
   }
+
+
+
+
 }

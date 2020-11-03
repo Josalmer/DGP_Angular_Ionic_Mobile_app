@@ -1,44 +1,38 @@
-    <div class="chat-main-container">
-            <ion-item *ngFor="let message of messages; let i = index;">
-                <!-- <ion-avatar slot="start">
+<div class="chat-main-container">
+  <ion-item *ngFor="let message of messages; let i = index;">
+    <!-- <ion-avatar slot="start">
                     <ion-icon name="fotoPedirALaAPI" size="large"></ion-icon>
                 </ion-avatar> -->
-                <ion-label>
-                    <h1>{{ message.sender}}</h1>
-                    <h2>{{ message.text}}</h2>
-                    <h4>{{ message.timestamp }}</h4>
-                </ion-label>
-            </ion-item>
-        
-    </div>
-    <div class="chat-toolbar">
-        <div class="toolbar-options-chat-container">
-        <ion-row>
-                <ion-col class="chat-col" size = "4">
-                    <ion-img class="chat-img-attach ion-text-center attach-img" src="../assets/img/foto.png"></ion-img>
-                </ion-col>
-                <ion-col class="chat-col" size = "4">
-                    <ion-img class="chat-img-attach ion-text-center attach-audio" src="../assets/img/altavoz.png"></ion-img>
-                </ion-col>
-                <ion-col class="chat-col" size = "4">
-                    <ion-img class="chat-img-attach ion-text-center attach-file" src="../assets/img/papel.png"></ion-img>
-                </ion-col>
-        </ion-row >
-        </div>
-        <div class="toolbar-chat-container">
-        <ion-row >
-                <ion-col class="chat-col" size="9">
-                    <ion-input class="message-input" placeholder="Escribe tu mensaje..."></ion-input>
-                </ion-col>
-                <ion-col class="chat-col" size = "3">
-                    <ion-img class="img-send-text-message ion-text-center" src="../assets/img/enviar.png"></ion-img>
-                </ion-col>
-        </ion-row >
-        </div>
+    <ion-label>
+      <h1>{{ message.sender}}</h1>
+      <h2>{{ message.text}}</h2>
+      <h4>{{ message.timestamp }}</h4>
+    </ion-label>
+  </ion-item>
+
 </div>
-
-
-
-
-
-
+<div class="chat-toolbar">
+  <div class="toolbar-options-chat-container">
+    <ion-row>
+      <ion-col class="chat-col" size="4">
+        <ion-img class="chat-img-attach ion-text-center attach-img" src="../assets/img/foto.png"></ion-img>
+      </ion-col>
+      <ion-col class="chat-col" size="4">
+        <ion-img class="chat-img-attach ion-text-center attach-audio" src="../assets/img/altavoz.png"></ion-img>
+      </ion-col>
+      <ion-col class="chat-col" size="4">
+        <ion-img class="chat-img-attach ion-text-center attach-file" src="../assets/img/papel.png"></ion-img>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div class="toolbar-chat-container">
+    <ion-row>
+      <ion-col class="chat-col" size="9">
+        <ion-input class="message-input" placeholder="Escribe tu mensaje..."></ion-input>
+      </ion-col>
+      <ion-col class="chat-col" size="3">
+        <ion-img class="img-send-text-message ion-text-center" src="../assets/img/enviar.png"></ion-img>
+      </ion-col>
+    </ion-row>
+  </div>
+</div>

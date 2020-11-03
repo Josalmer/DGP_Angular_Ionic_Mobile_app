@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MyTasksService } from 'src/app/shared/services/my-tasks.service';
 
@@ -28,8 +28,6 @@ export class TaskPage implements OnInit {
     this.taskService.getMockTaskById(this.taskId).subscribe(
       response => this.task = response
     );
-    
-    
   }
 
 }

@@ -23,10 +23,7 @@ export class MyTasksPage implements OnInit {
 
   loadTasks(): void {
     this.tasksService.getMockTasks().subscribe(
-      response => {
-        console.log(response);
-        this.myTasks = response;
-      },
+      response => this.myTasks = response,
       error => {
         this.toastAlert.presentToast('Se ha producido un error en la carga de tareas: ' + error.details, 'danger');
       }

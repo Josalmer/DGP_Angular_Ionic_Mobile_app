@@ -13,13 +13,13 @@
     </ion-toolbar>
   </ion-header>
 
-
+  <div class="my-groups">
 
     <ion-card class="group-card" *ngFor="let group of myGroups" (click)="navigateToGroup(group.id)">   
       <ion-img src="../../../../assets/img/charla-grupo.png" class="group-img"></ion-img>
       <ion-label class="inside-group-card">{{ group.name }}</ion-label>
-      <ion-img src="../../../../assets/img/enviar.png" class="group-img"></ion-img>
+      <ion-icon name="chatbubbles-outline" class="group-chat-icon"></ion-icon>
     </ion-card>
-   
-  
+ 
+  </div>
 </ion-content>

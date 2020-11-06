@@ -4,8 +4,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MyTasksPage } from './pages/my-tasks/my-tasks.page';
-import { TaskPage } from './pages/task/task.page';
+import { TaskChatPage } from './pages/my-task-chat/task-chat.page';
+import { TaskInfoPage } from './pages/my-task-info/task-info.page';
 import { sharedModule } from '../shared/shared.module';
+
 
 @NgModule({
   imports: [
@@ -15,12 +17,14 @@ import { sharedModule } from '../shared/shared.module';
     FormsModule,
     RouterModule.forChild([
       { path: '', component: MyTasksPage },
-      { path: ':id', component: TaskPage }
+      { path: ':id/info', component: TaskInfoPage },
+      { path: ':id/chat', component: TaskChatPage}
     ])
   ],
   declarations: [
     MyTasksPage,
-    TaskPage
+    TaskInfoPage,
+    TaskChatPage
   ]
 })
 export class MyTasksPageModule {}

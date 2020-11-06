@@ -31,7 +31,7 @@ export class MyTasksPage implements OnInit {
   }
 
   navigateToTask(id: string): void {
-    this.router.navigateByUrl('/tabs/my-tasks/' + id);
+    this.router.navigateByUrl('/tabs/my-tasks/' + id +'/info');
   }
 
 }

@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      {{task.title}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+  
+  <ion-content [fullscreen]="true">
+      <ion-header collapse="condense">
+        <ion-toolbar>      
+          <ion-title size="large">{{task.title}}</ion-title>
+        </ion-toolbar>
+      </ion-header>
+
+      <div class="margin-top-30">
+      <ion-card class="card-info-task">
+        <ion-card-header>
+          <ion-card-title>{{task.title}}</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          {{task.description_large}}
+        </ion-card-content>
+
+        <ion-grid class="margin-top-30">
+          <ion-row class="ion-align-items-center">
+            <ion-col size="12" class="ion-text-center">
+              <ion-button  color="secondary"><span class="btn-secondary-dark-contrast" (click)="navigateToTaskChat(task.id)">Resolver tarea</span></ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+    </div>
+      
+  </ion-content>

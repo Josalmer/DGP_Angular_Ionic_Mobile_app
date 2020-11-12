@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { MyTasksService } from 'src/app/shared/services/my-tasks.service';
 
 @Component({
-  selector: 'app-task',
-  templateUrl: 'task.page.html'
+  selector: 'app-task-chat',
+  templateUrl: 'task-chat.page.html'
 })
-export class TaskPage implements OnInit {
+export class TaskChatPage implements OnInit {
   taskId: string;
   //task contendrá por ejemplo id, descripcion y mensajes
   task: any;
@@ -14,7 +15,8 @@ export class TaskPage implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private taskService: MyTasksService
+    private taskService: MyTasksService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -28,6 +30,10 @@ export class TaskPage implements OnInit {
     this.taskService.getMockTaskById(this.taskId).subscribe(
       response => this.task = response
     );
+  }
+
+  navigateBack(id: string): void {
+    this.router.navigateByUrl('/tabs/my-tasks/' + id + '/info');
   }
 
 }

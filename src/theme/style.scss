@@ -13,6 +13,31 @@ Global
   margin-bottom: 10px;
 }
 
+.margin-top-30{
+  margin-top: 30px;
+}
+
+
+.icon-back{
+  font-size: 25px;
+  margin: auto;
+  color: rgb(62, 129, 138);
+}
+
+.text-back{
+  font-size: 14px;
+  margin-top: 7%;
+  color: rgb(62, 129, 138);
+}
+
+.title-with-back{
+  padding-left: 0px;
+}
+
+.col-back{
+  padding-top: 10px;
+}
+
 /*********************************
 My groups
 **********************************/
@@ -175,4 +200,27 @@ background-color: #b9dfb9;
 
 .attach-file{
   background-color: #faf5df;
+}
+
+/**********************************************
+Info de la tarea
+**********************************************/
+
+.btn-secondary-dark-contrast{
+
+  color: #000000;
+  font-weight: 500;
+
+}
+
+.card-info-task{
+  box-shadow: none;
+}
+
+.card-info-task ion-card-title{
+  font-size: 30px;
+}
+
+.card-info-task ion-card-content{
+  font-size: 20px;
 }

@@ -13,16 +13,13 @@
     </ion-toolbar>
   </ion-header>
 
+  <div class="my-groups">
 
-  <div *ngFor="let group of myGroups; let i = index;" (click)="navigateToGroup(group.id)">
-    <ion-item [color]="i % 2 ? 'dark' : 'light'">
-      <ion-avatar slot="start">
-        <ion-icon name="people-circle-outline" [color]="i % 2 ? 'light' : 'dark'" size="large"></ion-icon>
-      </ion-avatar>
-      <ion-label [color]="i % 2 ? 'light' : 'dark'">
-        <h1>{{ group.name }}</h1>
-      </ion-label>
-      <ion-icon name="chatbox-ellipses-outline"></ion-icon>
-    </ion-item>
+    <ion-card class="group-card" *ngFor="let group of myGroups" (click)="navigateToGroup(group.id)">   
+      <ion-img src="../../../../assets/img/charla-grupo.png" class="group-img"></ion-img>
+      <ion-label class="inside-group-card">{{ group.name }}</ion-label>
+      <ion-icon name="chatbubbles-outline" class="group-chat-icon"></ion-icon>
+    </ion-card>
+ 
   </div>
 </ion-content>

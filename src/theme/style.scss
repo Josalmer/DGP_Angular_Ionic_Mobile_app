@@ -3,14 +3,14 @@ Global
 **********************************/
 
 .flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .margin-10 {
-  margin-top: 10px;
-  margin-bottom: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 .margin-top-30{
@@ -41,51 +41,63 @@ Global
 /*********************************
 My groups
 **********************************/
-
-.even {
-  color: dark;
+.my-groups {
+	height: 90%;
+	overflow: scroll;
 }
 
-.odd {
-  color: primary;
+.group-card {
+	background-color: #e9e9e9;
+	color: black;
+	height: 8em;
+	max-width: 80%;
+	margin: 30px auto 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.ion {
-	color: #33d333;
+.inside-group-card {
+	text-align: center;
+	width: 70%;
+	font-size: 30px;
 }
 
-ion-item {
-	background-color: #6084bb;
+.group-img {
+	height: 80px;
+	width: 80px;
+	margin: 0 20px 0 20px;
+}
+
+.group-chat-icon {
+	width: 60px;
+	height: 60px;
+	margin: 0 30px 0 30px;
 }
 
 /*********************************
 Navigation
 **********************************/
 
-ion-tab-bar{
-
-  height: 12vh;
-
+ion-tab-bar {
+	height: 12vh;
 }
 
-.img-nav-bar{
-
-  width: 90%;
-  height: 90%;
+.img-nav-bar {
+	width: 90%;
+	height: 90%;
 }
 
-
-.btn-grupos{
-  background-color: #adffad;
+.btn-grupos {
+	background-color: #adffad;
 }
 
-.btn-tareas{
-  background-color:#ebed89;
+.btn-tareas {
+	background-color: #ebed89;
 }
 
-
-.btn-perfil{
-  background-color: #d9c7e0;
+.btn-perfil {
+	background-color: #d9c7e0;
 }
 
 /*********************************
@@ -93,109 +105,94 @@ Login
 **********************************/
 
 .animal-card {
-  max-width: 35%;
-  margin-top: 5px;
-  margin-bottom: 5px;
+	max-width: 35%;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 .animal-card-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap; 
-  justify-content: center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
 .selected-animals-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap; 
-  justify-content: center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
 }
 
 .selected-animal-card {
-  margin: 0;
-  max-width: 15%;
+	margin: 0;
+	max-width: 15%;
 }
-
 
 /*********************************
 Componente del chat
 **********************************/
 
-
-
-.chat-main-container{
-
-  height: 75%;
-  overflow: scroll;
-
+.chat-main-container {
+	height: 75%;
+	overflow: scroll;
 }
 
-.chat-toolbar{
-  height: 25%;
-  
+.chat-toolbar {
+	height: 25%;
 }
 
-.toolbar-options-chat-container{
-
-  border-top: 1px solid #6084bb;
-  background-color: #d1d1d1;
-  height: 50%;
-  
- 
+.toolbar-options-chat-container {
+	border-top: 1px solid #6084bb;
+	background-color: #d1d1d1;
+	height: 50%;
 }
 
-.toolbar-chat-container{
-  border-top: 1px solid #6084bb;
-  background-color: #d1d1d1;
-  height: 50%;
-
+.toolbar-chat-container {
+	border-top: 1px solid #6084bb;
+	background-color: #d1d1d1;
+	height: 50%;
 }
 
-.chat-col{
-  padding:0;
-  text-align: center;
-  height: 100%;
-  display: block;
-  vertical-align: middle;
+.chat-col {
+	padding: 0;
+	text-align: center;
+	height: 100%;
+	display: block;
+	vertical-align: middle;
 }
 
-
-
-.message-input{
-margin-top: 5%;
-background-color: white;
-margin-left: 5%;
-width: 90%;
-border-radius: 20px;
-border: 1px solid #6084bb;
-text-align: left;
+.message-input {
+	margin-top: 5%;
+	background-color: white;
+	margin-left: 5%;
+	width: 90%;
+	border-radius: 20px;
+	border: 1px solid #6084bb;
+	text-align: left;
 }
 
-.img-send-text-message{
-
-  width: 60%;
-  height: 60%;
-  margin:0 auto;
-
+.img-send-text-message {
+	width: 60%;
+	height: 60%;
+	margin: 0 auto;
 }
 
-.chat-img-attach{
-  width: 50%;
-  height: 50%;
-  margin: 10px auto;
-  padding: 2px 10px;
-  border: 1px solid black;
-  border-radius: 40%; 
-
+.chat-img-attach {
+	width: 50%;
+	height: 50%;
+	margin: 10px auto;
+	padding: 2px 10px;
+	border: 1px solid black;
+	border-radius: 40%;
 }
 
-.attach-img{
-background-color: #b9dfb9;
+.attach-img {
+	background-color: #b9dfb9;
 }
 
-.attach-audio{
-  background-color: #cfa7a7;
+.attach-audio {
+	background-color: #cfa7a7;
 }
 
 .attach-file{

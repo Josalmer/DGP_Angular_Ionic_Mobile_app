@@ -36,6 +36,6 @@ export class LoginService {
   }
 
   getPictograms(): Observable<any> {
-    return this.http.get('get-pictograms');
+    return this.http.get('users/pictograms/');
   }
 }

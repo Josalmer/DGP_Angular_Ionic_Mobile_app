@@ -18,7 +18,7 @@ export class LoginFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginService.getPictograms().subscribe(
-      response => this.animals = response
+      response => this.animals = response.pictograms
     );
   }
 

@@ -19,8 +19,8 @@ export class MyProfileService {
   ) { }
 
   loadUserProfile(): Observable<any> {
-    return this.http.get('users').pipe(
-      tap(res => this.setUser(res))
+    return this.http.get('users/profile').pipe(
+      tap(res => this.setUser(res.user))
     );
   }
 

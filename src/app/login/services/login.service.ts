@@ -25,14 +25,15 @@ export class LoginService {
   }
 
   logout(): Observable<any> {
-    return this.http.delete('users/logout');
+    return this.http.post('users/logout', {});
   }
 
   saveToken = (res: any) => {
-    const authToken = 'Bearer ' + res.token;
+    const authToken = res.token;
     this.sessionService.setAuthToken(authToken);
-    this.profileService.loadUserProfile().subscribe();
-    this.navCtrl.navigateRoot(['/']);
+    this.profileService.loadUserProfile().subscribe(
+      response => this.navCtrl.navigateRoot(['/'])
+    );
   }
 
   getPictograms(): Observable<any> {

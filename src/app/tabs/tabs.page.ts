@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { MyProfileService } from '../shared/services/my-profile.service';
 
 @Component({
@@ -16,6 +15,8 @@ export class TabsPage implements OnInit{
     ) { }
 
   ngOnInit(): void {
-    this.genre = this.profileService.getCurrentUser().genre;
+    this.profileService.loadUserProfile().subscribe(
+      response => this.genre = this.profileService.getCurrentUser().genre
+    );
   }
 }

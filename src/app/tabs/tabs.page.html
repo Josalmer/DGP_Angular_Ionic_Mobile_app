@@ -2,14 +2,17 @@
 
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="my-groups" class="btn-grupos">
+      <h1>Grupos</h1>
       <ion-img src="../assets/img/amigos.png" class="img-nav-bar"></ion-img> 
     </ion-tab-button>
 
     <ion-tab-button tab="my-tasks" class="btn-tareas">
+      <h1>Tareas</h1>
       <ion-img src="../assets/img/tareas.png" class="img-nav-bar"></ion-img>
     </ion-tab-button>
 
     <ion-tab-button tab="my-profile" class="btn-perfil">
+      <h1>Perfil</h1>
       <ion-img *ngIf="genre=='male'" src="../assets/img/yo-m.png" class="img-nav-bar"></ion-img>
       <ion-img *ngIf="genre=='female'" src="../assets/img/yo-f.png" class="img-nav-bar"></ion-img>
     </ion-tab-button>

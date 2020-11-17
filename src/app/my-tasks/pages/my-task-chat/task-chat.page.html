@@ -22,7 +22,7 @@
     <div layout-position="footer">
       <ion-row>
         <ion-col>
-          <app-chat-menu></app-chat-menu>
+          <app-chat-menu (sendMessageEmitter)="sendMessage($event)"></app-chat-menu>
         </ion-col>
       </ion-row>
     </div>

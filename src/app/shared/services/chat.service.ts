@@ -23,7 +23,8 @@ export class ChatService {
     return of(messages);
   }
 
-
-
+  sendMessage(params: {}): Observable<any> {
+    return this.http.post('post-messages', params);
+  }
 
 }

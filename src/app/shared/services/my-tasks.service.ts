@@ -37,7 +37,7 @@ export class MyTasksService {
       title: "Átatelos",
       description_large: 'La tarea consiste en atarse los zapatos. ¡Debes atarte los zapatos y mandar una foto con el resultado final!!',
       messages: [
-        { sender: 'Tutor 1', text: 'Hola, tienes alguna duda ?' },
+        { sender: 'Tutor 1', text: 'Hola, tienes alguna duda ?', sender_id: "soyyo", tutor: true },
         { sender: 'Alumno 1', text: 'No gracias' },
         { sender: 'Tutor 1', text: 'Seguro?' },
         { sender: 'Alumno 1', text: 'Si' },

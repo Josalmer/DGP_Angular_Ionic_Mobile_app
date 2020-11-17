@@ -2,9 +2,9 @@
   <div>
     <ion-row>
       <ion-col class="chat-col" size="9">
-        <ion-input class="message-input" placeholder="Escribe tu mensaje..."></ion-input>
+        <ion-input class="message-input" [(ngModel)]="currentMessage" placeholder="Escribe tu mensaje..."></ion-input>
       </ion-col>
-      <ion-col class="chat-col" size="3">
+      <ion-col class="chat-col" size="3" (click)="sendMessage()">
         <ion-img class="img-send-text-message ion-text-center" src="../assets/img/enviar.png"></ion-img>
       </ion-col>
     </ion-row>

@@ -39,7 +39,7 @@ export class MyProfileService {
   }
 
   loadMockUserProfile(): Observable<any> {
-    return of({"user": {"username": "Jose", "age": 31, "genre": "male"} }).pipe(
+    return of({"user": {"username": "Jose", "age": 31, "genre": "male", "id": "soyyo"} }).pipe(
       tap(res => {
         this.setUser(res.user);
       })

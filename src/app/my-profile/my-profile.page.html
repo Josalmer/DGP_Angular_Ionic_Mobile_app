@@ -1,26 +1,29 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-     Mi Perfil
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Mi Perfil</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <app-page-layout>
 
-  <app-user-details *ngIf="myProfile" [myProfile]="myProfile"></app-user-details>
+    <div layout-position="main">
+      <ion-row class="title-row">
+        <ion-col>
+          <ion-title>
+            Mi Perfil
+          </ion-title>
+        </ion-col>
+      </ion-row>
+    </div>
 
-  <ion-row>
-    <ion-col>
-      <ion-card style = "max-width: 50%; margin: auto;" (click)="logout()">
-        <h2 class="flex-center">Logout</h2>
-        <ion-img src="../../../../assets/img/cerrar.png"></ion-img>
-      </ion-card>
-    </ion-col>
-  </ion-row>
+    <div layout-position="content">
+      <app-user-details *ngIf="myProfile" [myProfile]="myProfile"></app-user-details>
+
+      <ion-row>
+        <ion-col>
+          <ion-card style="max-width: 50%; margin: auto;" (click)="logout()">
+            <h2 class="flex-center">Logout</h2>
+            <ion-img src="../../../../assets/img/cerrar.png"></ion-img>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </div>
+
+  </app-page-layout>
 </ion-content>

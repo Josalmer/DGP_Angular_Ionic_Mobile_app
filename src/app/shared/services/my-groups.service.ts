@@ -19,12 +19,12 @@ export class MyGroupsService {
 
 	getMockGroups(): Observable<any> {
 		const groups = [
-			{ name: 'Grupo Actividades 1', id: 1, participants: 31, messages: 10 },
-			{ name: 'Grupo Apoyo 3', id: 2, participants: 20, messages: 5 },
-			{ name: 'Grupo Centro', id: 3, participants: 53, messages: 45 },
-			{ name: 'Grupo La Chana', id: 4, participants: 45, messages: 32 },
-			{ name: 'Grupo Baile', id: 5, participants: 13, messages: 45 },
-			{ name: 'Grupo Matemáticas', id: 6, participants: 45, messages: 33 }
+			{ name: 'Actividades 1', id: 1, participants: 31, messages: 10 },
+			{ name: 'Apoyo 3', id: 2, participants: 20, messages: 5 },
+			{ name: 'Centro', id: 3, participants: 53, messages: 45 },
+			{ name: 'La Chana', id: 4, participants: 45, messages: 32 },
+			{ name: 'Baile', id: 5, participants: 13, messages: 45 },
+			{ name: 'Matemáticas', id: 6, participants: 45, messages: 33 }
 		];
 
 		return of(groups);

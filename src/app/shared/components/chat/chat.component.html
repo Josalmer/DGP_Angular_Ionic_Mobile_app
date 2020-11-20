@@ -1,7 +1,9 @@
 <div class="chat-main-container">
   <ion-item *ngFor="let message of messages; let i = index;">
-    <ion-label [class]="message.sender === 'Ana'?'message-send':'message-receive'">
-      <h1>{{ message.sender }}</h1>
+    <ion-label [class]="{ 'message-send': message.sender_id === 7, 'message-tutor': message.tutor === true,'message-receive': message.sender_id !== 7}">
+      <h1 *ngIf="message.tutor; then thenBlock else elseBlock"></h1>
+      <ng-template #thenBlock>{{message.sender}} - Tutor del grupo</ng-template>
+      <ng-template #elseBlock>{{message.sender}}</ng-template>  
       <h2 class ="message-text">{{ message.text }}</h2>
       <h4 class="ion-text-right">{{ message.timestamp }}</h4>
     </ion-label>

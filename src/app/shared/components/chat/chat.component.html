@@ -1,13 +1,9 @@
 <div class="chat-main-container">
   <ion-item *ngFor="let message of messages; let i = index;">
-    <!-- <ion-avatar slot="start">
-                    <ion-icon name="fotoPedirALaAPI" size="large"></ion-icon>
-                </ion-avatar> -->
-    <ion-label>
-      <h1>{{ message.sender}}</h1>
-      <h2>{{ message.text}}</h2>
-      <h4>{{ message.timestamp }}</h4>
+    <ion-label [class]="message.sender === 'Ana'?'message-send':'message-receive'">
+      <h1>{{ message.sender }}</h1>
+      <h2 class ="message-text">{{ message.text }}</h2>
+      <h4 class="ion-text-right">{{ message.timestamp }}</h4>
     </ion-label>
   </ion-item>
-
 </div>

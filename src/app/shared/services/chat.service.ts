@@ -16,10 +16,12 @@ export class ChatService {
 
   getMockedMessages(id: string): Observable<any> {
     const messages = [
-      { text: 'Buenos dias', sender: 'Paco' },
-      { text: 'Hola', sender: 'Ana' },
-      { text: '¿Como estais?', sender: 'Ana' }
-    ];
+			{ text: 'Buenos dias', sender: 'Paco', timestamp: '12:03' },
+			{ text: 'Hola', sender: 'Ana', timestamp: '12:03' },
+      { text: '¿Como estais eh?', sender: 'Ana', timestamp: '12:04' },
+      { text: 'Por aqui estamos bien Gracias por preguntar Nos vemos la semana que viene!!', sender: 'Juan', timestamp: '12:05' },
+      { text: 'Me alegro un monton, a ver si nos vemos en clase luego', sender: 'Ana', timestamp: '12:07' }
+		];
     return of(messages);
   }
 

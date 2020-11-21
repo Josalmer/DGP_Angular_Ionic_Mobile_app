@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 import { Storage } from '@ionic/storage';
 import { tap } from 'rxjs/operators';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -19,9 +20,17 @@ export class MyProfileService {
   ) { }
 
   loadUserProfile(): Observable<any> {
-    return this.http.get('users/profile').pipe(
-      tap(res => this.setUser(res.user))
-    );
+    if (environment.simulated) {
+      return of({"user": {"username": "Jose", "age": 31, "genre": "male", "id": "soyyo"} }).pipe(
+        tap(res => {
+          this.setUser(res.user);
+        })
+      );
+    } else {
+      return this.http.get('users/profile').pipe(
+        tap(res => this.setUser(res.user))
+      );
+    }
   }
 
   setUser(user: any): void {
@@ -36,14 +45,6 @@ export class MyProfileService {
 
   getCurrentUser(): any {
     return this.user;
-  }
-
-  loadMockUserProfile(): Observable<any> {
-    return of({"user": {"username": "Jose", "age": 31, "genre": "male", "id": "soyyo"} }).pipe(
-      tap(res => {
-        this.setUser(res.user);
-      })
-    );
   }
 
   getUserGenre(): string{

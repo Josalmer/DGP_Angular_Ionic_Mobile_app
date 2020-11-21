@@ -15,7 +15,7 @@ export class TabsPage implements OnInit{
     ) { }
 
   ngOnInit(): void {
-    this.profileService.loadMockUserProfile().subscribe(
+    this.profileService.loadUserProfile().subscribe(
       response => this.genre = this.profileService.getCurrentUser().genre
     );
   }

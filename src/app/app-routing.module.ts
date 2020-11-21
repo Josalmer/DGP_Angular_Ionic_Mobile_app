@@ -16,9 +16,9 @@ const withoutGuard = {
 const routes: Routes = [];
 
 if (environment.simulated) {
-  routes.push(withGuard);
-} else {
   routes.push(withoutGuard);
+} else {
+  routes.push(withGuard);
 }
 
 routes.push(

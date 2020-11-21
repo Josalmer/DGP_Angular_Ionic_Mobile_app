@@ -1,7 +1,8 @@
 <ion-content>
 
+  
   <app-page-layout>
-
+ 
     <div layout-position="main">
       <ion-row class="title-row">
         <ion-col>
@@ -10,10 +11,20 @@
           </ion-title>
         </ion-col>
       </ion-row>
+      <ion-row>
+        <ion-col>
+          <app-search-bar [placeHolder]="'Buscar Tarea'" (searchEmitter)="filterTask($event)" ></app-search-bar>
+        </ion-col>
+      </ion-row>
     </div>
 
     <div layout-position="content">
-      <ion-card *ngFor="let task of myTasks;">
+      <ion-row *ngIf="filteredTasks.length === 0">
+        <ion-col>
+          <h1>¡¡No hay tareas con esa selección!!</h1>
+        </ion-col>
+      </ion-row>
+      <ion-card *ngFor="let task of filteredTasks;">
         <div (click)="navigateToTask(task.id)">
           <ion-card-header>
             <ion-card-title></ion-card-title>

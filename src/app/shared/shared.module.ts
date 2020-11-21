@@ -6,6 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { chatComponent } from './components/chat/chat.component';
 import { PageLayoutComponent } from './components/page-layout/page-layout.component';
 import { chatMenuComponent } from './components/chat-menu/chat-menu.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+
 
 @NgModule({
   imports: [
@@ -16,12 +18,14 @@ import { chatMenuComponent } from './components/chat-menu/chat-menu.component';
   declarations: [
     chatComponent,
     PageLayoutComponent,
-    chatMenuComponent
+    chatMenuComponent,
+    SearchBarComponent
   ],
   exports: [
     chatComponent,
     PageLayoutComponent,
-    chatMenuComponent
+    chatMenuComponent,
+    SearchBarComponent
   ]
 })
 export class sharedModule { }

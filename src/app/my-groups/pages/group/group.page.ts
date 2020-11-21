@@ -37,4 +37,14 @@ export class groupPage implements OnInit {
       response => this.messages = response
     );
   }
+
+  sendMessage(message: string): void {
+    let params = {
+      identifier: this.groupId,
+      body: message,
+    };
+    this.chatService.sendMessage(params).subscribe(
+      res => this.loadChat
+    )
+  }
 }

@@ -13,64 +13,63 @@ Global
 	margin-bottom: 10px;
 }
 
-.margin-top-30{
-  margin-top: 30px;
+.margin-top-30 {
+	margin-top: 30px;
 }
 
-
-.icon-back{
-  font-size: 25px;
-  margin: auto;
-  color: rgb(62, 129, 138);
+.icon-back {
+	font-size: 25px;
+	margin: auto;
+	color: rgb(62, 129, 138);
 }
 
-.text-back{
-  font-size: 14px;
-  margin-top: 7%;
-  color: rgb(62, 129, 138);
+.text-back {
+	font-size: 14px;
+	margin-top: 7%;
+	color: rgb(62, 129, 138);
 }
 
-.title-with-back{
-  padding-left: 0px;
+.title-with-back {
+	padding-left: 0px;
 }
 
-.col-back{
-  padding-top: 10px;
+.col-back {
+	padding-top: 10px;
 }
 
 /*********************************
 My groups
 **********************************/
 .my-groups {
-  height: 90%;
-  overflow: scroll;
+	height: 90%;
+	overflow: scroll;
 }
 
 .group-card {
-  background-color: #e9e9e9;
-  margin: 8% auto;
-  color: black;
-  max-width: 80%;
-  display: flex;
-  justify-content: center; /* align horizontal */
-  align-items: center; /* align vertical */
+	background-color: #e9e9e9;
+	margin: 8% auto;
+	color: black;
+	max-width: 90%;
+	display: flex;
+	justify-content: center; /* align horizontal */
+	align-items: center; /* align vertical */
 }
 
 .inside-group-card {
-  font-size: 1rem;
-  text-align: center;
+	font-size: 1rem;
+	text-align: center;
 }
 
 .group-img {
-  width: 70%;
-  height: 70%;
-  margin: 0 5% 0 5%;
+	width: 70%;
+	height: 70%;
+	margin: 0 5% 0 5%;
 }
 
 .group-chat-icon {
-  height: 30px;
-  width: 30px;
-  margin: 12% auto;
+	height: 30px;
+	width: 30px;
+	margin: 12% auto;
 }
 
 /*********************************
@@ -136,6 +135,43 @@ Componente del chat
 	overflow: scroll;
 }
 
+.message-send {
+	background-color: #eeafaf;
+	border-radius: 20px;
+	padding: 3%;
+	margin-left: auto;
+	margin-right: 0;
+	float: right;
+	max-width: 70%;
+}
+
+.message-receive {
+	background-color: #b0edec;
+	border-radius: 20px;
+	padding: 3%;
+	margin-left: 0;
+	float: left;
+	max-width: 70%;
+}
+
+.message-tutor {
+	background-color: #edb0e0;
+	border-radius: 20px;
+	padding: 3%;
+	margin-left: 0;
+	float: left;
+	max-width: 70%;
+}
+
+.message-text {
+	border-top: 0.1px solid #000000;
+	padding-left: 5%;
+	padding-top: 5%;
+	display: block;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
 .chat-toolbar {
 	height: 25%;
 }
@@ -147,9 +183,8 @@ Componente del chat
 }
 
 .toolbar-chat-container {
-	border-top: 1px solid #6084bb;
+	border-top: 2px solid #666666;
 	background-color: #d1d1d1;
-	height: 50%;
 }
 
 .chat-col {
@@ -193,29 +228,27 @@ Componente del chat
 	background-color: #cfa7a7;
 }
 
-.attach-file{
-  background-color: #faf5df;
+.attach-file {
+	background-color: #faf5df;
 }
 
 /**********************************************
 Info de la tarea
 **********************************************/
 
-.btn-secondary-dark-contrast{
-
-  color: #000000;
-  font-weight: 500;
-
+.btn-secondary-dark-contrast {
+	color: #000000;
+	font-weight: 500;
 }
 
-.card-info-task{
-  box-shadow: none;
+.card-info-task {
+	box-shadow: none;
 }
 
-.card-info-task ion-card-title{
-  font-size: 30px;
+.card-info-task ion-card-title {
+	font-size: 30px;
 }
 
-.card-info-task ion-card-content{
-  font-size: 20px;
+.card-info-task ion-card-content {
+	font-size: 20px;
 }

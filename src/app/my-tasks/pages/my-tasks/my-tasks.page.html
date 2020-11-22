@@ -1,4 +1,4 @@
-<ion-content>
+<ion-content *ngIf="filteredTasks">
 
   
   <app-page-layout>
@@ -25,7 +25,7 @@
         </ion-col>
       </ion-row>
       <div class="my-groups">
-        <ion-card class="task-card" *ngFor="let task of filteredTasks" (click)="navigateToTask(task.id)">
+        <ion-card class="task-card" *ngFor="let task of filteredTasks" (click)="navigateToTask(task.id_tarea)">
           <ion-row>
             <ion-col class="chat-col" size="3">
               <ion-img src="../../../../assets/img/charla-grupo.png" class="group-img"></ion-img>
@@ -35,7 +35,7 @@
             </ion-col>
           </ion-row>
           <ion-card-subtitle>
-            <p class="task-description-short">{{task.description_short}}</p>
+            <p class="task-description-short">{{task.shortDescription}}</p>
           </ion-card-subtitle>
         </ion-card>
       </div>

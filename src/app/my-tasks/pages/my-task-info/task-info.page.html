@@ -1,4 +1,4 @@
-<ion-content>
+<ion-content *ngIf="task">
 
   <app-page-layout>
 
@@ -15,14 +15,14 @@
     <div layout-position="content">
       <ion-card class="card-info-task">
         <ion-card-content>
-          {{task.description_large}}
+          <p [innerHTML]="task.fullDescription"></p>
         </ion-card-content>
 
         <ion-grid class="margin-top-30">
           <ion-row class="ion-align-items-center">
             <ion-col size="12" class="ion-text-center">
               <ion-button color="secondary"><span class="btn-secondary-dark-contrast"
-                  (click)="navigateToTaskChat(task.id)">Resolver tarea</span></ion-button>
+                  (click)="navigateToTaskChat(task.id_tarea)">Resolver tarea</span></ion-button>
             </ion-col>
           </ion-row>
         </ion-grid>

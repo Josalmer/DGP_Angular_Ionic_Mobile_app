@@ -12,6 +12,7 @@ export class TaskChatPage implements OnInit {
   taskId: string;
   //task contendrá por ejemplo id, descripcion y mensajes
   task: any;
+  chatMessages: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -24,12 +25,23 @@ export class TaskChatPage implements OnInit {
     this.route.params.subscribe(params => {
       this.taskId = params['id'];
       this.loadTask();
+      this.loadChat();
     });
   }
 
   loadTask(): void {
-    this.taskService.getMockTaskById(this.taskId).subscribe(
+    this.taskService.getTaskById(this.taskId).subscribe(
       response => this.task = response
+    );
+  }
+
+  loadChat(): void {
+    const params = {
+      identifier: this.taskId,
+      category: 'task'
+    };
+    this.chatService.getChat(params).subscribe(
+      response => this.chatMessages = response.mensajes
     );
   }
 

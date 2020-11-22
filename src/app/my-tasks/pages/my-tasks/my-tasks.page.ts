@@ -9,8 +9,8 @@ import { MyTasksService } from '../../../shared/services/my-tasks.service';
 })
 export class MyTasksPage implements OnInit {
 
-  myTasks: any = [];
-  filteredTasks: any = [];
+  myTasks: any;
+  filteredTasks: any;
 
   constructor(
     private tasksService: MyTasksService,
@@ -23,9 +23,9 @@ export class MyTasksPage implements OnInit {
   }
 
   loadTasks(): void {
-    this.tasksService.getMockTasks().subscribe(
+    this.tasksService.getTasks().subscribe(
       response => {
-        this.myTasks = response;
+        this.myTasks = response.tasks;
         this.filteredTasks = this.myTasks;
       },
       error => {
@@ -35,19 +35,15 @@ export class MyTasksPage implements OnInit {
   }
 
   navigateToTask(id: string): void {
-    this.router.navigateByUrl('/tabs/my-tasks/' + id +'/info');
+    this.router.navigateByUrl('/tabs/my-tasks/' + id + '/info');
   }
 
-  filterTask(search:string): void{
-
-    
+  filterTask(search: string): void {
     this.filteredTasks = search === '' ? this.myTasks : this.myTasks.filter(task => this.selectTask(task.title, search));
   }
 
-  selectTask(title:string, search: string): boolean{
-
+  selectTask(title: string, search: string): boolean {
     return title.toLowerCase().includes(search.toLowerCase());
-
   }
 
 }

@@ -8,33 +8,30 @@ import { MyTasksService } from 'src/app/shared/services/my-tasks.service';
   templateUrl: 'task-info.page.html'
 })
 export class TaskInfoPage implements OnInit {
-    taskId: string;
-    task: any;
-  
-  
-    constructor(
-      private route: ActivatedRoute,
-      private taskService: MyTasksService,
-      private router: Router
-    ) { }
-  
-    ngOnInit(): void {
-      this.route.params.subscribe(params => {
-        this.taskId = params['id'];
-        this.loadTask();
-      });
-    }
-  
-    loadTask(): void {
-      this.taskService.getMockTaskInfoById(this.taskId).subscribe(
-        response => this.task = response
-      );
-    }
+  taskId: string;
+  task: any;
 
+  constructor(
+    private route: ActivatedRoute,
+    private taskService: MyTasksService,
+    private router: Router
+  ) { }
+
+  ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      this.taskId = params['id'];
+      this.loadTask();
+    });
+  }
+
+  loadTask(): void {
+    this.taskService.getTaskById(this.taskId).subscribe(
+      response => this.task = response.task
+    );
+  }
 
   navigateToTaskChat(id: string): void {
-    this.router.navigateByUrl('/tabs/my-tasks/' + id +'/chat');
+    this.router.navigateByUrl('/tabs/my-tasks/' + id + '/chat');
   }
 
-  
-  }
+}

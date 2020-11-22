@@ -33,7 +33,7 @@ export class groupPage implements OnInit {
   }
 
   loadChat(): void {
-    this.chatService.getMockedMessages(this.groupId).subscribe(
+    this.chatService.getChat(this.groupId).subscribe(
       response => this.messages = response
     );
   }

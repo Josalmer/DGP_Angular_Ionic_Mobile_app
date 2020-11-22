@@ -52,7 +52,8 @@ export class TaskChatPage implements OnInit {
   sendMessage(message: string): void {
     const params = {
       identifier: this.taskId,
-      body: message
+      body: message,
+      category: 'task'
     };
     this.chatService.sendMessage(params).subscribe(
       response => this.loadTask(),

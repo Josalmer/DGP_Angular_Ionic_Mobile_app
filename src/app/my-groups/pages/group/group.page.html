@@ -13,12 +13,12 @@
     </div>
   
     <div layout-position="content">
-      <app-chat [messages]="messages"></app-chat>
+      <app-chat [messages]="messages" [user]="user"></app-chat>
     </div>
   
     <div layout-position="footer">
       <ion-row>
-        <ion-col>
+        <ion-col style="padding: 0 !important;">
           <app-chat-menu (sendMessageEmitter)="sendMessage($event)"></app-chat-menu>
         </ion-col>
       </ion-row>

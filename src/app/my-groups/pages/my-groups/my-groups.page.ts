@@ -21,7 +21,7 @@ export class MyGroupsPage implements OnInit {
   loadGroups(): void {
     this.groupsService.getGroups().subscribe(
       response => {
-        this.myGroups = response;
+        this.myGroups = response.grupos;
       },
       error => {
         alert(error);
@@ -30,7 +30,7 @@ export class MyGroupsPage implements OnInit {
   }
 
   navigateToGroup(id: string, group: any): void {
-    this.groupsService.saveGroup(group);
-    this.router.navigateByUrl('/tabs/my-groups/' + id);
+    // this.groupsService.saveGroup(group);
+    // this.router.navigateByUrl('/tabs/my-groups/' + id);
   }
 }

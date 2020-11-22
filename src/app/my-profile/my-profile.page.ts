@@ -32,8 +32,4 @@ export class MyProfilePage implements OnInit {
     );
   }
 
-  getAge(): void {
-    
-  }
-
 }

@@ -10,4 +10,8 @@ export class userDetailsComponent {
 
   constructor(
   ) { }
+
+  getAge(): string {
+    return this.myProfile.age;
+  }
 }

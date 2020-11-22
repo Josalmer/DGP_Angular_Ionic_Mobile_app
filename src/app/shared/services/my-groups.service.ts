@@ -8,13 +8,12 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class MyGroupsService {
-  groups: any;
   selectedGroup: any;
   constructor(private http: HttpClient) { }
 
   getGroups(): Observable<any> {
     if (environment.simulated) {
-      this.groups = [
+      const groups = [
         { name: 'Actividades 1', identifier: 1, memberCount: 31, messages: 10 },
         { name: 'Apoyo 3', identifier: 2, memberCount: 20, messages: 5 },
         { name: 'Centro', identifier: 3, memberCount: 53, messages: 45 },
@@ -23,10 +22,9 @@ export class MyGroupsService {
         { name: 'Matemáticas', identifier: 6, memberCount: 45, messages: 33 }
       ];
 
-      return of(this.groups);
+      return of(groups);
     } else {
-      this.groups = this.http.get('groups/get')
-      return this.groups;
+      return this.http.get('groups/get');
     }
   }
 
@@ -34,12 +32,7 @@ export class MyGroupsService {
     this.selectedGroup = group;
   }
 
-  getSelectedGroup(): Observable<any> {
-    if (environment.simulated) {
-      return of({ name: 'Actividades 1', identifier: 1, memberCount: 31, messages: 10 });
-    }
-    else {
-      return of(this.selectedGroup);
-    }
+  getSelectedGroup(): any {
+    return this.selectedGroup;
   }
 }

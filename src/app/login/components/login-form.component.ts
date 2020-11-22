@@ -44,9 +44,9 @@ export class LoginFormComponent implements OnInit {
   }
 
   addAnimal(animal): void {
-    if (this.selectedAnimals.length < 6) {
+    if (this.selectedAnimals.length < 4) {
       this.selectedAnimals.push(animal);
-      if (this.selectedAnimals.length === 6) {
+      if (this.selectedAnimals.length === 4) {
         setTimeout(() => {
           this.login();
         }, 1000);

@@ -5,7 +5,7 @@
 export const environment = {
   backend_url: 'http://localhost:8000',
   production: false,
-  simulated: true
+  simulated: false
 };
 
 /*

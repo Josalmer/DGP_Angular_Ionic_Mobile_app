@@ -2,35 +2,44 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
-	providedIn: 'root'
+  providedIn: 'root'
 })
 export class MyGroupsService {
-	constructor(private http: HttpClient) {}
+  groups: any;
+  selectedGroup: any;
+  constructor(private http: HttpClient) { }
 
-	getGroups(): Observable<any> {
-		return this.http.get('groups');
-	}
+  getGroups(): Observable<any> {
+    if (environment.simulated) {
+      this.groups = [
+        { name: 'Actividades 1', identifier: 1, memberCount: 31, messages: 10 },
+        { name: 'Apoyo 3', identifier: 2, memberCount: 20, messages: 5 },
+        { name: 'Centro', identifier: 3, memberCount: 53, messages: 45 },
+        { name: 'La Chana', identifier: 4, memberCount: 45, messages: 32 },
+        { name: 'Baile', identifier: 5, memberCount: 13, messages: 45 },
+        { name: 'Matemáticas', identifier: 6, memberCount: 45, messages: 33 }
+      ];
 
-	getGroupById(id: string): Observable<any> {
-		return this.http.get('groups/' + id);
-	}
+      return of(this.groups);
+    } else {
+      this.groups = this.http.get('groups/get')
+      return this.groups;
+    }
+  }
 
-	getMockGroups(): Observable<any> {
-		const groups = [
-			{ name: 'Actividades 1', id: 1, participants: 31, messages: 10 },
-			{ name: 'Apoyo 3', id: 2, participants: 20, messages: 5 },
-			{ name: 'Centro', id: 3, participants: 53, messages: 45 },
-			{ name: 'La Chana', id: 4, participants: 45, messages: 32 },
-			{ name: 'Baile', id: 5, participants: 13, messages: 45 },
-			{ name: 'Matemáticas', id: 6, participants: 45, messages: 33 }
-		];
+  saveGroup(group: any): void {
+    this.selectedGroup = group;
+  }
 
-		return of(groups);
-	}
-
-	getMockGroupById(id: string): Observable<any> {
-		return of({ name: 'Grupo Actividades 1', id: 1, participants: 31, messages: 10 });
-	}
+  getSelectedGroup(): Observable<any> {
+    if (environment.simulated) {
+      return of({ name: 'Actividades 1', identifier: 1, memberCount: 31, messages: 10 });
+    }
+    else {
+      return of(this.selectedGroup);
+    }
+  }
 }

@@ -19,7 +19,7 @@ export class MyGroupsPage implements OnInit {
   }
 
   loadGroups(): void {
-    this.groupsService.getMockGroups().subscribe(
+    this.groupsService.getGroups().subscribe(
       response => {
         this.myGroups = response;
       },
@@ -29,7 +29,8 @@ export class MyGroupsPage implements OnInit {
     );
   }
 
-  navigateToGroup(id: string): void {
+  navigateToGroup(id: string, group: any): void {
+    this.groupsService.saveGroup(group);
     this.router.navigateByUrl('/tabs/my-groups/' + id);
   }
 }

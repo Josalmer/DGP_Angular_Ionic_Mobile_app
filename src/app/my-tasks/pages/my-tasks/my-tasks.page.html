@@ -21,7 +21,30 @@
     <div layout-position="content">
       <ion-row *ngIf="filteredTasks.length === 0">
         <ion-col>
-          <h1>¡¡No hay tareas con esa selección!!</h1>
+          <h2>¡¡No hay tareas con esa selección!!</h2>
+        </ion-col>
+      </ion-row>
+      <div class="my-groups">
+        <ion-card class="group-card" *ngFor="let task of filteredTasks" (click)="navigateToTask(task.id)">
+          <ion-row>
+            <ion-col class="chat-col" size="3">
+              <ion-img src="../../../../assets/img/charla-grupo.png" class="group-img"></ion-img>
+            </ion-col>
+            <ion-col class="chat-col" size="6">
+              <h3 class="inside-group-card">{{ task.title }}</h3>
+            </ion-col>
+            <ion-col class="chat-col" size="3">
+             
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </div>
+    </div>
+
+    <!-- <div layout-position="content">
+      <ion-row *ngIf="filteredTasks.length === 0">
+        <ion-col>
+          <h2>¡¡No hay tareas con esa selección!!</h2>
         </ion-col>
       </ion-row>
       <ion-card *ngFor="let task of filteredTasks;">
@@ -39,7 +62,7 @@
           </ion-card-content>
         </div>
       </ion-card>
-    </div>
+    </div> -->
 
   </app-page-layout>
 </ion-content>

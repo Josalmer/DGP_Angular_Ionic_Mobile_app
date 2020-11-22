@@ -30,7 +30,7 @@ export class MyGroupsPage implements OnInit {
   }
 
   navigateToGroup(id: string, group: any): void {
-    // this.groupsService.saveGroup(group);
-    // this.router.navigateByUrl('/tabs/my-groups/' + id);
+    this.groupsService.saveGroup(group);
+    this.router.navigateByUrl('/tabs/my-groups/' + id);
   }
 }

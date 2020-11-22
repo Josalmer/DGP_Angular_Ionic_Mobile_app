@@ -4,19 +4,21 @@
 
     <div layout-position="main">
       <ion-row class="title-row">
-        <ion-col size="4" (click)="navigateBack()">
-          <ion-icon name="caret-back-circle-outline"></ion-icon>
+        <ion-col size="2" (click)="navigateBack()">
+          <ion-icon class="back-arrow" name="caret-back-circle-outline"></ion-icon>
         </ion-col>
         <ion-col size="8">
           <ion-title>
             {{task.title}}
           </ion-title>
         </ion-col>
+        <ion-col size="2" >
+        </ion-col>
       </ion-row>
     </div>
   
     <div layout-position="content">
-      <app-chat [messages]="task.messages"></app-chat>
+      <app-chat [messages]="chatMessages"></app-chat>
     </div>
   
     <div layout-position="footer">

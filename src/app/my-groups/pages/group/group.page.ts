@@ -1,27 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { ChatService } from 'src/app/shared/services/chat.service';
 import { MyGroupsService } from 'src/app/shared/services/my-groups.service';
-import { MyProfileService } from 'src/app/shared/services/my-profile.service';
 
 @Component({
   selector: 'app-group',
   templateUrl: 'group.page.html'
 })
 export class groupPage implements OnInit {
-  user: string;
   group: any;
   messages = [];
 
   constructor(
     private chatService: ChatService,
-    private groupService: MyGroupsService,
-    private profileService: MyProfileService
+    private groupService: MyGroupsService
   ) { }
 
   ngOnInit(): void {
     this.group = this.groupService.getSelectedGroup();
     this.loadChat();
-    this.user = this.profileService.getCurrentUser().id;
   }
 
   loadChat(): void {
@@ -30,7 +26,7 @@ export class groupPage implements OnInit {
       category: 'group'
     };
     this.chatService.getChat(params).subscribe(
-      response => this.messages = response
+      response => this.messages = response.mensajes
     );
   }
 

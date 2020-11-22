@@ -24,7 +24,7 @@ export class ChatService {
         { body: 'Por aqui estamos bien Gracias por preguntar Nos vemos la semana que viene!!', emisor: 'Juan', emisor_id:2, tutor: true, created: '12:05' },
         { body: 'Me alegro un monton, a ver si nos vemos en clase luego', emisor: 'Ana', emisor_id:"soyyo", tutor: false, created: '12:07' }
       ];
-      return of(messages);
+      return of({mensajes: messages});
     } else {
       return this.http.get('get-messages', params);
     }

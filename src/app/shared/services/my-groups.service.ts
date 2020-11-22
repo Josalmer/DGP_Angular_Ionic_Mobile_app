@@ -22,7 +22,7 @@ export class MyGroupsService {
         { name: 'Matemáticas', identifier: 6, memberCount: 45, messages: 33 }
       ];
 
-      return of(groups);
+      return of({grupos: groups});
     } else {
       return this.http.get('groups/get');
     }

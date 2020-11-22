@@ -16,11 +16,11 @@ export class MyTasksService {
   getTasks(): Observable<any> {
     if (environment.simulated) {
       const arrayOfTasks = [];
-      arrayOfTasks.push({ "id": "0", "title": "¡Átatelos!", "description_short": "Tarea para atarse los zapatos" });
-      arrayOfTasks.push({ "id": "1", "title": "¡Foto, Foto!", "description_short": "Tarea para hacerse una foto de perfil" });
-      arrayOfTasks.push({ "id": "2", "title": "¡Quiero escuchar tu voz!", "description_short": "Tarea para mandar un audio sobre cómo se encuentra el usuario" });
-      arrayOfTasks.push({ "id": "3", "title": "¿Como te encuentras hoy?", "description_short": "Tarea para que el usuario comente su estado de ánimo" });
-      return of(arrayOfTasks);
+      arrayOfTasks.push({ "id_tarea": "0", "title": "¡Átatelos!", "shortDescription": "Tarea para atarse los zapatos" });
+      arrayOfTasks.push({ "id_tarea": "1", "title": "¡Foto, Foto!", "shortDescription": "Tarea para hacerse una foto de perfil" });
+      arrayOfTasks.push({ "id_tarea": "2", "title": "¡Quiero escuchar tu voz!", "shortDescription": "Tarea para mandar un audio sobre cómo se encuentra el usuario" });
+      arrayOfTasks.push({ "id_tarea": "3", "title": "¿Como te encuentras hoy?", "shortDescription": "Tarea para que el usuario comente su estado de ánimo" });
+      return of({tasks: arrayOfTasks});
     } else {
       return this.http.get('tasks/get');
     }
@@ -29,21 +29,11 @@ export class MyTasksService {
   getTaskById(id: string): Observable<any> {
     if (environment.simulated) {
       const task = {
-        id : 0,
+        id_tarea : 0,
         title: "Átatelos",
-        description_large: 'La tarea consiste en atarse los zapatos. ¡Debes atarte los zapatos y mandar una foto con el resultado final!!',
-        messages: [
-          { sender: 'Tutor 1', text: 'Hola, tienes alguna duda ?', sender_id: "soyyo", tutor: true },
-          { sender: 'Alumno 1', text: 'No gracias' },
-          { sender: 'Tutor 1', text: 'Seguro?' },
-          { sender: 'Alumno 1', text: 'Si' },
-          { sender: 'Tutor 1', text: 'De verdad?' },
-          { sender: 'Alumno 1', text: 'Siuuuuuu' },
-          { sender: 'Tutor 1', text: '¿Pur que?' },
-          { sender: 'Alumno 1', text: 'SIUUUUUUUUUUUUUUU' }
-        ]
+        fullDescription: 'La tarea consiste en atarse los zapatos. ¡Debes atarte los zapatos y mandar una foto con el resultado final!!'
       };
-      return of(task);
+      return of({task: task});
     } else {
       return this.http.get('tasks/get/' + id);
     }

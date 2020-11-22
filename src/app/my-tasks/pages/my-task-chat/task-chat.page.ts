@@ -31,7 +31,7 @@ export class TaskChatPage implements OnInit {
 
   loadTask(): void {
     this.taskService.getTaskById(this.taskId).subscribe(
-      response => this.task = response
+      response => this.task = response.task
     );
   }
 

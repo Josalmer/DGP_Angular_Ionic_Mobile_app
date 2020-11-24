@@ -16,6 +16,7 @@ export class ChatService {
   }
 
   getChat(params: {}): Observable<any> {
+    console.log(params);
     if (environment.simulated) {
       const messages = [
         { body: 'Buenos dias', emisor: 'Paco', emisor_id:5, tutor: false, created: '12:03' },
@@ -26,12 +27,12 @@ export class ChatService {
       ];
       return of({mensajes: messages});
     } else {
-      return this.http.get('get-messages', params);
+      return this.http.get('get-messages', {params});
     }
   }
 
   sendMessage(params: {}): Observable<any> {
-    return this.http.post('post-messages', params);
+    return this.http.post('post-message', params);
   }
 
 }

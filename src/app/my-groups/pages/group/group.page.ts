@@ -34,7 +34,8 @@ export class groupPage implements OnInit {
     let params = {
       identifier: this.group.identifier,
       body: message,
-      category: 'group'
+      category: 'group',
+      mimeType: 'txt'
     };
     this.chatService.sendMessage(params).subscribe(
       res => this.loadChat

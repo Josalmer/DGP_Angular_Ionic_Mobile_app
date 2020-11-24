@@ -28,7 +28,7 @@ export class TaskInfoPage implements OnInit {
     this.taskService.getTaskById(this.taskId).subscribe(
       response => this.task = response.task
     );
-  } 
+  }
 
   navigateToTaskChat(id: string): void {
     this.router.navigateByUrl('/tabs/my-tasks/' + id + '/chat');

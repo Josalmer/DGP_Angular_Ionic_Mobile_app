@@ -1,0 +1,21 @@
+<ion-row class="user-profile" >
+  <ion-col>
+    <ion-row>
+      <div class="animal-card-container">
+        <ion-card class="profile-img">
+          <ion-img src="assets/img/profile.png"></ion-img>
+        </ion-card>
+      </div>
+    </ion-row>
+    <ion-row>
+      <ion-col class="flex-center">
+        <h2>Nombre: {{ myProfile.username }}</h2>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="flex-center">
+        <h5> Edad: {{ getAge() }} </h5>
+      </ion-col>
+    </ion-row>
+  </ion-col>
+</ion-row>

@@ -51,4 +51,17 @@ export class MyProfileService {
     return this.user.genre;
   }
 
+  getProgress(): Observable<any> {
+    if(environment.simulated){
+      const categories = [
+        { name: 'Psicomotricidad', done: 1, total: 2},
+        { name: 'Escritura', done: 4, total: 4},
+        { name: 'Números', done: 8, total: 13}
+      ];
+      return of({categorias: categories});
+    } else{
+      //return this.http.get('users/progress'));
+      return;
+    }
+  }
 }

@@ -15,6 +15,7 @@ export class MyGroupsPage implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    this.groupsService.saveGroup(undefined);
     this.loadGroups();
   }
 

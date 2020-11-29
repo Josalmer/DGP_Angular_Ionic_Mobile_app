@@ -3,12 +3,12 @@ Global
 **********************************/
 
 .title-row {
-  margin-top: 40px;
-  margin-bottom: 30px;
-  ion-title {
-    text-align: center;
-    font-size: 1.5em;
-  }
+	margin-top: 40px;
+	margin-bottom: 30px;
+	ion-title {
+		text-align: center;
+		font-size: 1.5em;
+	}
 }
 
 .flex-center {
@@ -46,15 +46,14 @@ Global
 	padding-top: 10px;
 }
 
-.tabs-menu-title{
-
+.tabs-menu-title {
 	margin: 0 auto;
 	color: #353535;
 }
 
-.back-arrow {    
-  font-size: 2.2em;
-  margin-left: 20px;
+.back-arrow {
+	font-size: 2.2em;
+	margin-left: 20px;
 }
 
 /*********************************
@@ -74,7 +73,7 @@ My groups
 	justify-content: center; /* align horizontal */
 	align-items: center; /* align vertical */
 }
-.task-card{
+.task-card {
 	background-color: #e9e9e9;
 	margin: 10% auto 5% auto;
 	color: black;
@@ -87,14 +86,14 @@ My groups
 .inside-group-card {
 	font-size: 1.5em;
 	text-align: left;
-	padding-top:10px;
+	padding-top: 10px;
 }
 
 .group-img {
 	width: 70%;
 	height: 70%;
 	margin: 0 5% 0 5%;
-	padding-top:10px;
+	padding-top: 10px;
 }
 
 .group-chat-icon {
@@ -284,6 +283,32 @@ Info de la tarea
 	font-size: 20px;
 }
 
-.task-description-short{
+.task-description-short {
 	color: #000000;
+}
+
+/**********************************************
+Mi perfil y resultados
+**********************************************/
+.user-profile {
+	background-color: #e9e9e9;
+}
+
+.profile-img {
+	border: 5px solid rgb(255, 255, 255);
+	max-width: 35%;
+	margin-top: 5%;
+}
+.progress-card {
+	background-color: #e9e9e9;
+	color: black;
+}
+
+.completed {
+	max-width: 20%;
+	float: right;
+	margin-bottom: -30%;
+}
+.progress-b {
+	height: 20px;
 }

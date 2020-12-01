@@ -26,6 +26,12 @@
                   <h3 class="ion-text-left">{{category.name}}</h3>
                 </ion-col>
               </ion-row>
+              <ion-row>
+                <ion-col *ngIf="category.done == category.total ? 'success':'warning'; let color">
+                  <!--<p class="ion-text-center">{{(category.done/category.total)*100}}%</p> -->
+                  <ion-progress-bar class="progress-b" color="{{color}}" [value]="category.done/category.total"></ion-progress-bar>
+                </ion-col>
+              </ion-row>
               <ion-row *ngIf="{ a: category.total-category.done};let tasks">
                 <ion-col *ngIf="tasks.a > 1">
                   <h5 class="ion-text-center">Te quedan solo {{tasks.a}} tareas. ¡Ánimo!</h5>
@@ -36,13 +42,7 @@
                 <ion-col *ngIf="tasks.a == 0">
                   <h5 class="ion-text-center">¡Has completado todas las tareas!</h5>
                 </ion-col>
-              </ion-row>
-              <ion-row>
-                <ion-col *ngIf="category.done == category.total ? 'success':'warning'; let color">
-                  <!--<p class="ion-text-center">{{(category.done/category.total)*100}}%</p> -->
-                  <ion-progress-bar class="progress-b" color="{{color}}" [value]="category.done/category.total"></ion-progress-bar>
-                </ion-col>
-              </ion-row>
+              </ion-row>    
             </ion-card>
           </div>
         </div>

@@ -21,7 +21,7 @@ export class MyProfileService {
 
   loadUserProfile(): Observable<any> {
     if (environment.simulated) {
-      return of({"user": {"username": "Jose", "age": 31, "genre": "male", "id": "soyyo"} }).pipe(
+      return of({"user": {"username": "Juan Perez", "age": 31, "genre": "male", "id": "soyyo"} }).pipe(
         tap(res => {
           this.setUser(res.user);
         })

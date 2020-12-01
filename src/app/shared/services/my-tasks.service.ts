@@ -16,10 +16,10 @@ export class MyTasksService {
   getTasks(): Observable<any> {
     if (environment.simulated) {
       const arrayOfTasks = [];
-      arrayOfTasks.push({ "id_tarea": "0", "title": "¡Átatelos!", "shortDescription": "Tarea para atarse los zapatos" });
-      arrayOfTasks.push({ "id_tarea": "1", "title": "¡Foto, Foto!", "shortDescription": "Tarea para hacerse una foto de perfil" });
-      arrayOfTasks.push({ "id_tarea": "2", "title": "¡Quiero escuchar tu voz!", "shortDescription": "Tarea para mandar un audio sobre cómo se encuentra el usuario" });
-      arrayOfTasks.push({ "id_tarea": "3", "title": "¿Como te encuentras hoy?", "shortDescription": "Tarea para que el usuario comente su estado de ánimo" });
+      arrayOfTasks.push({ "id_tarea": "0", "title": "¡Átatelos!", "shortDescription": "Tarea para atarse los zapatos", "category": "psicomotricidad" });
+      arrayOfTasks.push({ "id_tarea": "1", "title": "¡Foto, Foto!", "shortDescription": "Tarea para hacerse una foto de perfil", "category": "psicomotricidad" });
+      arrayOfTasks.push({ "id_tarea": "2", "title": "¡Quiero escuchar tu voz!", "shortDescription": "Tarea para mandar un audio sobre cómo se encuentra el usuario", "category": "escritura" });
+      arrayOfTasks.push({ "id_tarea": "3", "title": "¿Como te encuentras hoy?", "shortDescription": "Tarea para que el usuario comente su estado de ánimo", "category": "números" });
       return of({tasks: arrayOfTasks});
     } else {
       return this.http.get('tasks/get');

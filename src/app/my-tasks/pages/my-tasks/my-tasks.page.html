@@ -16,6 +16,11 @@
           <app-search-bar [placeHolder]="'Buscar Tarea'" (searchEmitter)="filterTask($event)" ></app-search-bar>
         </ion-col>
       </ion-row>
+      <ion-row>
+        <ion-col size="4" *ngFor="let category of categories" (click)="toggleSelected(category)"  [ngClass]="selected(category) ? 'selected-category' : 'unselected-category'">
+          <ion-img src="/assets/img/{{category}}.png"></ion-img>
+        </ion-col>
+      </ion-row>
     </div>
 
     <div layout-position="content">

@@ -14,15 +14,8 @@
 
     <div layout-position="content">
       <app-user-details *ngIf="myProfile" [myProfile]="myProfile"></app-user-details>
-
-      <ion-row>
-        <ion-col>
-          <ion-card style="max-width: 50%; margin: auto;" (click)="logout()">
-            <h2 class="flex-center">Logout</h2>
-            <ion-img src="../../../../assets/img/cerrar.png"></ion-img>
-          </ion-card>
-        </ion-col>
-      </ion-row>
+      <app-user-menu></app-user-menu>
+      
     </div>
 
   </app-page-layout>

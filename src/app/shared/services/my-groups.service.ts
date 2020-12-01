@@ -33,6 +33,9 @@ export class MyGroupsService {
   }
 
   getSelectedGroup(): any {
-    return this.selectedGroup;
+    if(this.selectedGroup != undefined)
+      return this.selectedGroup;
+    else
+      return ""; 
   }
 }

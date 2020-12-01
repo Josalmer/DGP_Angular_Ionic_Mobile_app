@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
+import { LoginService } from '../login/services/login.service';
 import { MyProfileService } from '../shared/services/my-profile.service';
-import { ToastAlertService } from '../shared/services/toast-alert.service';
+import { SessionService } from '../shared/services/session.service';
 
 @Component({
   selector: 'app-my-profile',
@@ -8,28 +10,24 @@ import { ToastAlertService } from '../shared/services/toast-alert.service';
 })
 export class MyProfilePage implements OnInit {
   myProfile: any;
-  id = '5f8ebfc1628dd01a5aac1096';
 
   constructor(
     private profileService: MyProfileService,
-    private toastAlert: ToastAlertService
+    private navCtrl: NavController,
+    private loginService: LoginService,
+    private sessionService: SessionService
     ) { }
 
   ngOnInit(): void {
-    this.loadData();
+    this.myProfile = this.profileService.getCurrentUser();
   }
 
-  loadData(): void {
-    this.loadUserProfile();
-  }
-
-  loadUserProfile(): void {
-    this.profileService.getMockUserProfile(this.id).subscribe(
+  async logout() {
+    this.loginService.logout().subscribe(
       response => {
-        this.myProfile = response.user;
-      },
-      error => {
-        this.toastAlert.presentToast('Se ha producido un error: ' + error.details, 'danger');
+        this.sessionService.clearAuthToken();
+        this.profileService.clearUser();
+        this.navCtrl.navigateRoot(['/login']);
       }
     );
   }

@@ -1,0 +1,25 @@
+<div class="toolbar-chat-container">
+  <div>
+    <ion-row>
+      <ion-col class="chat-col" size="9">
+        <ion-input class="message-input" [(ngModel)]="currentMessage" placeholder="Escribe tu mensaje..."></ion-input>
+      </ion-col>
+      <ion-col class="chat-col" size="3" (click)="sendMessage()">
+        <ion-img class="img-send-text-message ion-text-center" src="../assets/img/enviar.png"></ion-img>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div>
+    <ion-row>
+      <ion-col class="chat-col" size="4">
+        <ion-img class="chat-img-attach ion-text-center attach-img" src="../assets/img/foto.png"></ion-img>
+      </ion-col>
+      <ion-col class="chat-col" size="4">
+        <ion-img class="chat-img-attach ion-text-center attach-audio" src="../assets/img/altavoz.png"></ion-img>
+      </ion-col>
+      <ion-col class="chat-col" size="4">
+        <ion-img class="chat-img-attach ion-text-center attach-file" src="../assets/img/papel.png"></ion-img>
+      </ion-col>
+    </ion-row>
+  </div>
+</div>

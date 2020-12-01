@@ -13,28 +13,28 @@ const routes: Routes = [
       },
       {
         path: 'my-tasks',
-        loadChildren: () => import('../my-tasks/my-tasks.module').then(m => m.MyTaskListPageModule)
+        loadChildren: () => import('../my-tasks/my-tasks.module').then((m) => m.MyTasksPageModule)
       },
       {
         path: 'my-profile',
-        loadChildren: () => import('../my-profile/my-profile.module').then(m => m.MyProfilePageModule)
+        loadChildren: () => import('../my-profile/my-profile.module').then((m) => m.MyProfilePageModule)
       },
       {
         path: '',
-        redirectTo: '/tabs/my-profile',
+        redirectTo: '/tabs/my-tasks',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/my-profile',
+    redirectTo: '/tabs/my-tasks',
     pathMatch: 'full'
   }
 ];
 
 @NgModule({
-	imports: [ RouterModule.forChild(routes) ],
-	exports: [ RouterModule ]
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule { }

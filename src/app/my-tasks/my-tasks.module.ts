@@ -3,19 +3,28 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import {MyTaskListPage } from './my-tasks.page';
-import { userTasksComponent } from './components/my-task-list/my-task-list.component';
+import { MyTasksPage } from './pages/my-tasks/my-tasks.page';
+import { TaskChatPage } from './pages/my-task-chat/task-chat.page';
+import { TaskInfoPage } from './pages/my-task-info/task-info.page';
+import { sharedModule } from '../shared/shared.module';
+
 
 @NgModule({
   imports: [
+    sharedModule,
     IonicModule,
     CommonModule,
     FormsModule,
-    RouterModule.forChild([{ path: '', component: MyTaskListPage }])
+    RouterModule.forChild([
+      { path: '', component: MyTasksPage },
+      { path: ':id/info', component: TaskInfoPage },
+      { path: ':id/chat', component: TaskChatPage}
+    ])
   ],
   declarations: [
-    MyTaskListPage,
-    userTasksComponent
+    MyTasksPage,
+    TaskInfoPage,
+    TaskChatPage
   ]
 })
-export class MyTaskListPageModule {}
+export class MyTasksPageModule {}

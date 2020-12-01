@@ -1,1 +1,18 @@
-<h1>contraseña</h1>
+<ion-row class="flex-center">
+  <h2>Introduce tus animales</h2>
+</ion-row>
+<div class="animal-card-container" *ngIf="animals">
+  <ion-card class="animal-card" *ngFor="let animal of animals" (click)="addAnimal(animal)">
+    <ion-img [src]="imgUrl(animal)"></ion-img>
+  </ion-card>
+</div>
+<ion-row style="margin-top: 20px;">
+  <ion-col size=10 class="selected-animals-container">
+    <ion-card *ngFor="let animal of selectedAnimals" class="selected-animal-card">
+      <ion-img [src]="imgUrl(animal)"></ion-img>
+    </ion-card>
+  </ion-col>
+  <ion-col (click)="clear()">
+    <ion-img src="../../../../assets/img/borrar.png"></ion-img>
+  </ion-col>
+</ion-row>

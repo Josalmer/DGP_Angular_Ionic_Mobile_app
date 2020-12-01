@@ -1,0 +1,34 @@
+<ion-content *ngIf="myGroups">
+
+  <app-page-layout>
+
+    <div layout-position="main">
+      <ion-row class="title-row">
+        <ion-col>
+          <ion-title>
+            Mis grupos
+          </ion-title>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <div layout-position="content">
+      <div class="my-groups">
+        <ion-card class="group-card" *ngFor="let group of myGroups" (click)="navigateToGroup(group.identifier,group)">
+          <ion-row>
+            <ion-col class="chat-col" size="3">
+              <ion-img src="../../../../assets/img/charla-grupo.png" class="group-img"></ion-img>
+            </ion-col>
+            <ion-col class="chat-col" size="6">
+              <h3 class="inside-group-card">{{ group.name }}</h3>
+            </ion-col>
+            <ion-col class="chat-col" size="3">
+              <ion-icon name="chatbubbles-outline" class="group-chat-icon"></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </div>
+    </div>
+
+  </app-page-layout>
+</ion-content>

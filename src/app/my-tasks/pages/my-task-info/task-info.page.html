@@ -1,0 +1,33 @@
+<ion-content *ngIf="task">
+
+  <app-page-layout>
+
+    <div layout-position="main">
+      <ion-row class="title-row">
+        <ion-col>
+          <ion-title>
+            {{task.title}}
+          </ion-title>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <div layout-position="content">
+      <ion-card class="card-info-task">
+        <ion-card-content>
+          <p [innerHTML]="task.fullDescription"></p>
+        </ion-card-content>
+
+        <ion-grid class="margin-top-30">
+          <ion-row class="ion-align-items-center">
+            <ion-col size="12" class="ion-text-center">
+              <ion-button color="secondary"><span class="btn-secondary-dark-contrast"
+                  (click)="navigateToTaskChat(task.id_tarea)">Resolver tarea</span></ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+    </div>
+
+  </app-page-layout>
+</ion-content>

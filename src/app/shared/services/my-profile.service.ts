@@ -2,22 +2,53 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
+import { Storage } from '@ionic/storage';
+import { tap } from 'rxjs/operators';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MyProfileService {
 
+  authKey = "userProfile";
+  user: any;
+
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private storage: Storage
   ) { }
 
-  getUserProfile(id: string): Observable<any> {
-    return this.http.get('users/' + id);
+  loadUserProfile(): Observable<any> {
+    if (environment.simulated) {
+      return of({"user": {"username": "Jose", "age": 31, "genre": "male", "id": "soyyo"} }).pipe(
+        tap(res => {
+          this.setUser(res.user);
+        })
+      );
+    } else {
+      return this.http.get('users/profile').pipe(
+        tap(res => this.setUser(res.user))
+      );
+    }
   }
 
-  getMockUserProfile(id: string): Observable<any> {
-    return of({"user": {"username": "Jose", "age": 31} });
+  setUser(user: any): void {
+    this.storage.set(this.authKey, user);
+    this.user = user;
+  }
+
+  clearUser(): void {
+    this.storage.remove(this.authKey);
+    this.user = undefined;
+  }
+
+  getCurrentUser(): any {
+    return this.user;
+  }
+
+  getUserGenre(): string{
+    return this.user.genre;
   }
 
 }

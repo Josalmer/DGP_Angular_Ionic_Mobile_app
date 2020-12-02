@@ -303,7 +303,22 @@ Info de la tarea
 }
 
 .selected-category {
-  background-color: red;
+  background-color: rgb(248, 174, 174);
+}
+
+.img-tasks-not-found{
+	width: 60%;
+	height: 60%;
+	text-align: center;
+	margin:0 auto;
+}
+
+.category-name{
+	text-align: center;
+	font-size: 11px;
+}
+.category-filter-col{
+	border: 1px solid #dddddd;
 }
 
 /**********************************************

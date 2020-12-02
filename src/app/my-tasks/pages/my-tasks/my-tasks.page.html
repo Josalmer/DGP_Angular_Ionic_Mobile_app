@@ -17,16 +17,18 @@
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col size="4" *ngFor="let category of categories" (click)="toggleSelected(category)"  [ngClass]="selected(category) ? 'selected-category' : ''">
+        <ion-col size="4" class="category-filter-col" *ngFor="let category of categories" (click)="toggleSelected(category)"  [ngClass]="selected(category) ? 'selected-category' : ''">
           <ion-img class="category-button-img" src="/assets/img/{{category}}.png"></ion-img>
+          <p class="category-name">{{category | uppercase}}</p>
         </ion-col>
       </ion-row>
     </div>
-
+  
     <div layout-position="content">
       <ion-row *ngIf="filteredTasks.length === 0">
-        <ion-col>
-          <h2>¡¡No hay tareas con esa selección!!</h2>
+        <ion-col class="chat-col">
+          <ion-img class="img-tasks-not-found" src="/assets/img/confuso.png"></ion-img>
+          <h3>No hay tareas con esa selección. Inténtalo de nuevo escribiendo el nombre de la tarea.</h3>
         </ion-col>
       </ion-row>
       <div class="my-groups">

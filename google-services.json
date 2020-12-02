@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "158660794343",
+    "firebase_url": "https://asociacionvale-b7cf0.firebaseio.com",
+    "project_id": "asociacionvale-b7cf0",
+    "storage_bucket": "asociacionvale-b7cf0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:158660794343:android:7e5a3888859a98cc180f42",
+        "android_client_info": {
+          "package_name": "com.solutions7.asociacion_vale"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "158660794343-9i2kcnv2t085cieipe2d7jrb1q5ie6rq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMaVY547OODemVoV6xCxCbjIfi0dgkPyo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "158660794343-9i2kcnv2t085cieipe2d7jrb1q5ie6rq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

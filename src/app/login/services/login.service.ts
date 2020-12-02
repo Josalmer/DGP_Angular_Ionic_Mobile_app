@@ -5,6 +5,7 @@ import { tap } from 'rxjs/operators';
 import { SessionService } from 'src/app/shared/services/session.service';
 import { NavController } from '@ionic/angular';
 import { MyProfileService } from 'src/app/shared/services/my-profile.service';
+import { NotificationsService } from 'src/app/shared/services/notifications.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,8 @@ export class LoginService {
     private http: HttpClient,
     private sessionService: SessionService,
     private navCtrl: NavController,
-    private profileService: MyProfileService
+    private profileService: MyProfileService,
+    private notificationsService: NotificationsService
   ) { }
 
   login(params: any): Observable<any> {
@@ -31,6 +33,7 @@ export class LoginService {
   saveToken = (res: any) => {
     const authToken = res.token;
     this.sessionService.setAuthToken(authToken);
+    this.notificationsService.registerDevice();
     this.profileService.loadUserProfile().subscribe(
       response => this.navCtrl.navigateRoot(['/'])
     );

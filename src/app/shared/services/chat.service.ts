@@ -16,7 +16,6 @@ export class ChatService {
   }
 
   getChat(params: {}): Observable<any> {
-    console.log(params);
     if (environment.simulated) {
       const messages = [
         { body: 'Buenos dias', emisor: 'Paco', emisor_id:5, tutor: false, created: '12:03' },

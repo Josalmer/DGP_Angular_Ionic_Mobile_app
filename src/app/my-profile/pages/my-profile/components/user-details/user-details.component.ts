@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-user-details',
@@ -13,5 +14,9 @@ export class userDetailsComponent {
 
   getAge(): string {
     return this.myProfile.age;
+  }
+
+  userImage(): string {
+    return this.myProfile.image !== '' ? environment.backend_url + '/' + this.myProfile.image : 'assets/img/profile.png';
   }
 }

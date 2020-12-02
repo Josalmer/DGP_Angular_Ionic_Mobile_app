@@ -41,4 +41,15 @@ export class groupPage implements OnInit {
       res => this.loadChat
     );
   }
+
+  uploadFile(base64File) {
+    const params = {
+      identifier: this.group.identifier,
+      category: 'group',
+      base64: base64File
+    };
+    this.chatService.sendMessage(params).subscribe(
+      res => this.loadChat
+    );
+  }
 }

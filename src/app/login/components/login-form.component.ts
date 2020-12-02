@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastAlertService } from 'src/app/shared/services/toast-alert.service';
+import { environment } from 'src/environments/environment';
 import { LoginService } from '../services/login.service';
 
 @Component({
@@ -8,8 +9,8 @@ import { LoginService } from '../services/login.service';
 })
 export class LoginFormComponent implements OnInit {
 
-  selectedAnimals = [];
-  animals: any;
+  selectedPictograms = [];
+  pictograms: any;
 
   constructor(
     private loginService: LoginService,
@@ -18,17 +19,17 @@ export class LoginFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginService.getPictograms().subscribe(
-      response => this.animals = response.pictograms
+      response => this.pictograms = response.pictograms
     );
   }
 
   login(): void {
-    let animalPassword = '';
-    this.selectedAnimals.forEach(animal => {
-      animalPassword += animal.key;
+    let pictogramPassword = '';
+    this.selectedPictograms.forEach(pictograms => {
+      pictogramPassword += pictograms.key;
     });
     const params = {
-      password: animalPassword
+      password: pictogramPassword
     };
     this.loginService.login(params).subscribe(
       response => { },
@@ -39,14 +40,14 @@ export class LoginFormComponent implements OnInit {
     );
   }
 
-  imgUrl(animal: any): string {
-    return "../../../../assets/img/" + animal.name + ".png";
+  imgUrl(image: any): string {
+    return environment.backend_url + '/' + image;
   }
 
   addAnimal(animal): void {
-    if (this.selectedAnimals.length < 4) {
-      this.selectedAnimals.push(animal);
-      if (this.selectedAnimals.length === 4) {
+    if (this.selectedPictograms.length < 4) {
+      this.selectedPictograms.push(animal);
+      if (this.selectedPictograms.length === 4) {
         setTimeout(() => {
           this.login();
         }, 1000);
@@ -55,6 +56,6 @@ export class LoginFormComponent implements OnInit {
   }
 
   clear(): void {
-    this.selectedAnimals = [];
+    this.selectedPictograms = [];
   }
 }

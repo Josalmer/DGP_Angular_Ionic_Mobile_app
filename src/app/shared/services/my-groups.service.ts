@@ -22,7 +22,7 @@ export class MyGroupsService {
         { name: 'Matemáticas', identifier: 6, memberCount: 45, messages: 33 }
       ];
 
-      return of({grupos: groups});
+      return of({ grupos: groups });
     } else {
       return this.http.get('groups/get');
     }
@@ -33,9 +33,9 @@ export class MyGroupsService {
   }
 
   getSelectedGroup(): any {
-    if(this.selectedGroup != undefined)
+    if (this.selectedGroup != undefined)
       return this.selectedGroup;
     else
-      return ""; 
+      return "";
   }
 }

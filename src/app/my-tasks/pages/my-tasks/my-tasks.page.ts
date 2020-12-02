@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastAlertService } from 'src/app/shared/services/toast-alert.service';
 import { MyTasksService } from '../../../shared/services/my-tasks.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-my-tasks',
@@ -64,5 +65,9 @@ export class MyTasksPage implements OnInit {
       this.selectedCategory = category;
     }
     this.filterTask(this.search);
+  }
+
+  taskImage(image: string): string {
+    return (image !== '' && image !== 'null') ? environment.backend_url + '/' + image : "../../../../assets/img/charla-grupo.png";
   }
 }

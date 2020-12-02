@@ -132,7 +132,7 @@ Login
 **********************************/
 
 .animal-card {
-	max-width: 35%;
+	max-width: 30%;
 	margin-top: 5px;
 	margin-bottom: 5px;
 }
@@ -153,7 +153,12 @@ Login
 
 .selected-animal-card {
 	margin: 0;
-	max-width: 15%;
+	max-width: 20%;
+}
+
+.login-logo {
+  margin-top: 20px;
+  max-width: 35%;
 }
 
 /*********************************
@@ -260,6 +265,11 @@ Componente del chat
 
 .attach-file {
 	background-color: #faf5df;
+}
+
+.file-input {
+  position: absolute;
+  opacity: 0;
 }
 
 /**********************************************

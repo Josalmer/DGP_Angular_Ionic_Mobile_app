@@ -12,12 +12,18 @@
   <div>
     <ion-row>
       <ion-col class="chat-col" size="4">
+        <ion-input class="file-input" no-padding type="file" accept="image/*" capture="camera" (ionChange)="onInputFileChange($event)">
+        </ion-input>
         <ion-img class="chat-img-attach ion-text-center attach-img" src="../assets/img/foto.png"></ion-img>
       </ion-col>
       <ion-col class="chat-col" size="4">
+        <ion-input class="file-input" no-padding type="file" (ionChange)="onInputFileChange($event)">
+        </ion-input>
         <ion-img class="chat-img-attach ion-text-center attach-audio" src="../assets/img/altavoz.png"></ion-img>
       </ion-col>
       <ion-col class="chat-col" size="4">
+        <ion-input class="file-input" no-padding type="file" (ionChange)="onInputFileChange($event)">
+        </ion-input>
         <ion-img class="chat-img-attach ion-text-center attach-file" src="../assets/img/papel.png"></ion-img>
       </ion-col>
     </ion-row>

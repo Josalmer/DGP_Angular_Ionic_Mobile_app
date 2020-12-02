@@ -62,4 +62,16 @@ export class TaskChatPage implements OnInit {
     );
   }
 
+  uploadFile(base64File) {
+    const params = {
+      identifier: this.taskId,
+      category: 'task',
+      base64: base64File
+    };
+    this.chatService.sendMessage(params).subscribe(
+      response => this.loadTask(),
+      error => alert(error)
+    );
+  }
+
 }

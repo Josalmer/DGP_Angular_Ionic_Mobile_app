@@ -295,6 +295,7 @@ Info de la tarea
 
 .task-description-short {
 	color: #000000;
+	padding: 1px 5px;
 }
 
 .category-button-img {
@@ -319,6 +320,27 @@ Info de la tarea
 }
 .category-filter-col{
 	border: 1px solid #dddddd;
+}
+
+.solved-task{
+	margin: 0 auto;
+	width: 90%;
+	height: 90%;
+}
+
+.margin-tasks-page{
+	margin-top: 20px;
+	margin-bottom: 0px !important;
+}
+
+.solved-task-filter{
+	width: 80%;
+	margin:0 auto;
+}
+
+.margin-bottom-tasks{
+	padding-bottom: 20px;
+	border-bottom: 1px solid #dddddd;
 }
 
 /**********************************************

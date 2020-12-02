@@ -3,8 +3,8 @@
   
   <app-page-layout>
  
-    <div layout-position="main">
-      <ion-row class="title-row">
+    <div layout-position="main" class="margin-bottom-tasks">
+      <ion-row class="title-row margin-tasks-page">
         <ion-col>
           <ion-title>
             Mis Tareas
@@ -22,6 +22,14 @@
           <p class="category-name">{{category | uppercase}}</p>
         </ion-col>
       </ion-row>
+      <ion-row style="margin-top:20px">
+        <ion-col size="6" class="chat-col"><!--TODO. (click)="funcionparamarcar el filtro."-->
+          <ion-button class="solved-task-filter" color="light">Resueltas</ion-button>
+        </ion-col>
+        <ion-col size="6" class="chat-col">
+          <ion-button class="solved-task-filter" color="light" >No Resueltas</ion-button>
+        </ion-col>
+      </ion-row>
     </div>
   
     <div layout-position="content">
@@ -35,10 +43,13 @@
         <ion-card class="task-card" *ngFor="let task of filteredTasks" (click)="navigateToTask(task.id_tarea)">
           <ion-row>
             <ion-col class="chat-col" size="3">
-              <ion-img src="../../../../assets/img/charla-grupo.png" class="group-img"></ion-img>
+              <ion-img src="/assets/img/charla-grupo.png" class="group-img"></ion-img>
             </ion-col>
-            <ion-col class="chat-col" size="8">
+            <ion-col class="chat-col" size="6">
               <h3 class="inside-group-card">{{task.title }}</h3>
+            </ion-col>
+            <ion-col class="chat-col" size="2">
+              <ion-img  *ngIf="task.status.finished"  class="solved-task" src="/assets/img/medalla.png"></ion-img>
             </ion-col>
           </ion-row>
           <ion-card-subtitle>

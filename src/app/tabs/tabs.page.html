@@ -1,17 +1,17 @@
 <ion-tabs *ngIf="genre">
 
   <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="my-groups" class="btn-grupos">
+    <ion-tab-button (click)="navigateTo('my-groups')" class="btn-grupos">
       <ion-img src="../assets/img/amigos.png" class="img-nav-bar"></ion-img> 
       <h2 class="tabs-menu-title">Grupos</h2>
     </ion-tab-button>
 
-    <ion-tab-button tab="my-tasks" class="btn-tareas">
+    <ion-tab-button (click)="navigateTo('my-tasks')" class="btn-tareas">
       <ion-img src="../assets/img/tareas.png" class="img-nav-bar"></ion-img>
       <h2 class="tabs-menu-title">Tareas</h2>
     </ion-tab-button>
 
-    <ion-tab-button tab="my-profile" class="btn-perfil">
+    <ion-tab-button (click)="navigateTo('my-profile')" class="btn-perfil">
       <ion-img *ngIf="genre=='male'" src="../assets/img/yo-m.png" class="img-nav-bar"></ion-img>
       <ion-img *ngIf="genre=='female'" src="../assets/img/yo-f.png" class="img-nav-bar"></ion-img>
       <h2 class="tabs-menu-title">Perfil</h2>

@@ -11,6 +11,9 @@ export class MyTasksPage implements OnInit {
 
   myTasks: any;
   filteredTasks: any;
+  categories = ['números', 'escritura', 'psicomotricidad'];
+  selectedCategory = '';
+  search = '';
 
   constructor(
     private tasksService: MyTasksService,
@@ -39,11 +42,27 @@ export class MyTasksPage implements OnInit {
   }
 
   filterTask(search: string): void {
+    this.search = search;
     this.filteredTasks = search === '' ? this.myTasks : this.myTasks.filter(task => this.selectTask(task.title, search));
+    if (this.selectedCategory !== '') {
+      this.filteredTasks = this.filteredTasks.filter(task => task.category === this.selectedCategory);
+    }
   }
 
   selectTask(title: string, search: string): boolean {
     return title.toLowerCase().includes(search.toLowerCase());
   }
 
+  selected(category: string): boolean {
+    return this.selectedCategory === category;
+  }
+
+  toggleSelected(category: string): void {
+    if (this.selectedCategory === category) {
+      this.selectedCategory = '';
+    } else {
+      this.selectedCategory = category;
+    }
+    this.filterTask(this.search);
+  }
 }

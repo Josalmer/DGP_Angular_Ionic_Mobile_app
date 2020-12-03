@@ -42,27 +42,4 @@ export class groupPage implements OnInit {
       response => this.messages = response.mensajes
     );
   }
-
-  sendMessage(message: string): void {
-    let params = {
-      identifier: this.group.identifier,
-      body: message,
-      category: 'group',
-      mimeType: 'txt'
-    };
-    this.chatService.sendMessage(params).subscribe(
-      res => this.loadChat()
-    );
-  }
-
-  uploadFile(base64File) {
-    const params = {
-      identifier: this.group.identifier,
-      category: 'group',
-      base64: base64File
-    };
-    this.chatService.sendMessage(params).subscribe(
-      res => this.loadChat()
-    );
-  }
 }

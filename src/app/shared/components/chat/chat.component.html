@@ -5,7 +5,7 @@
       <ng-template #thenBlock>{{message.emisor}} - Tutor del grupo</ng-template>
       <ng-template #elseBlock>{{message.emisor}}</ng-template>  
       <h2 class ="message-text">{{ message.body }}</h2>
-      <h4 class="ion-text-right">{{ message.created }}</h4>
+      <h4 class="ion-text-right">{{ message.created | date:'d/M/yy, HH:mm' }}</h4>
     </ion-label>
   </ion-item>
 </div>

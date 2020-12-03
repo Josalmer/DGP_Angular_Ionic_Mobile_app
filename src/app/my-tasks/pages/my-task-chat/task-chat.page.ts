@@ -49,29 +49,4 @@ export class TaskChatPage implements OnInit {
     this.router.navigateByUrl('/tabs/my-tasks/' + id + '/info');
   }
 
-  sendMessage(message: string): void {
-    const params = {
-      identifier: this.taskId,
-      body: message,
-      category: 'task',
-      mimeType: 'txt'
-    };
-    this.chatService.sendMessage(params).subscribe(
-      response => this.loadTask(),
-      error => alert(error)
-    );
-  }
-
-  uploadFile(base64File) {
-    const params = {
-      identifier: this.taskId,
-      category: 'task',
-      base64: base64File
-    };
-    this.chatService.sendMessage(params).subscribe(
-      response => this.loadTask(),
-      error => alert(error)
-    );
-  }
-
 }

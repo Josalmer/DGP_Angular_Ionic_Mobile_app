@@ -33,7 +33,7 @@
         <ion-card class="task-card" *ngFor="let task of filteredTasks" (click)="navigateToTask(task.id_tarea)">
           <ion-row>
             <ion-col class="chat-col" size="3">
-              <ion-img [src]="taskImage(task.image)" class="group-img"></ion-img>
+              <ion-img src="../../../../assets/img/charla-grupo.png" class="group-img"></ion-img>
             </ion-col>
             <ion-col class="chat-col" size="8">
               <h3 class="inside-group-card">{{task.title }}</h3>

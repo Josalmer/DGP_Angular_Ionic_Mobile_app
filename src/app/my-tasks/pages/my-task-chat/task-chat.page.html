@@ -24,7 +24,7 @@
     <div layout-position="footer">
       <ion-row>
         <ion-col style="padding: 0 !important;">
-          <app-chat-menu (sendMessageEmitter)="sendMessage($event)" (sendFileEmitter)="uploadFile($event)"></app-chat-menu>
+          <app-chat-menu (reloadChat)="loadChat()" type="task" [id]="taskId"></app-chat-menu>
         </ion-col>
       </ion-row>
     </div>

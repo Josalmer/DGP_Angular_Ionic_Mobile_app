@@ -3,13 +3,16 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MyGroupsService {
   selectedGroup: any;
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient
+    ) { }
 
   getGroups(): Observable<any> {
     if (environment.simulated) {
@@ -26,16 +29,5 @@ export class MyGroupsService {
     } else {
       return this.http.get('groups/get');
     }
-  }
-
-  saveGroup(group: any): void {
-    this.selectedGroup = group;
-  }
-
-  getSelectedGroup(): any {
-    if (this.selectedGroup != undefined)
-      return this.selectedGroup;
-    else
-      return "";
   }
 }

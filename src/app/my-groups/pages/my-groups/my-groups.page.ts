@@ -15,7 +15,6 @@ export class MyGroupsPage implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.groupsService.saveGroup(undefined);
     this.loadGroups();
   }
 
@@ -30,8 +29,7 @@ export class MyGroupsPage implements OnInit {
     );
   }
 
-  navigateToGroup(id: string, group: any): void {
-    this.groupsService.saveGroup(group);
+  navigateToGroup(id: string): void {
     this.router.navigateByUrl('/tabs/my-groups/' + id);
   }
 }

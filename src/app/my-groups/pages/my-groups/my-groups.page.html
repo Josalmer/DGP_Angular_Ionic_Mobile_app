@@ -14,7 +14,7 @@
 
     <div layout-position="content">
       <div class="my-groups">
-        <ion-card class="group-card" *ngFor="let group of myGroups" (click)="navigateToGroup(group.identifier,group)">
+        <ion-card class="group-card" *ngFor="let group of myGroups" (click)="navigateToGroup(group.identifier)">
           <ion-row>
             <ion-col class="chat-col" size="3">
               <ion-img src="/assets/img/charla-grupo.png" class="group-img"></ion-img>

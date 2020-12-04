@@ -304,7 +304,9 @@ Info de la tarea
 }
 
 .selected-category {
-  background-color: rgb(248, 174, 174);
+  /*background-color: rgb(248, 174, 174);*/
+  background-color: #3DD77A;
+  color: #ffffff;
 }
 
 .img-tasks-not-found{
@@ -317,6 +319,7 @@ Info de la tarea
 .category-name{
 	text-align: center;
 	font-size: 11px;
+	font-weight: bold;
 }
 .category-filter-col{
 	border: 1px solid #dddddd;
@@ -336,12 +339,15 @@ Info de la tarea
 .solved-task-filter{
 	width: 80%;
 	margin:0 auto;
+	box-shadow: none !important;
 }
 
 .margin-bottom-tasks{
 	padding-bottom: 20px;
 	border-bottom: 1px solid #dddddd;
 }
+
+
 
 /**********************************************
 Mi perfil y resultados

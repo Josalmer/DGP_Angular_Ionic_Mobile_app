@@ -23,11 +23,11 @@
         </ion-col>
       </ion-row>
       <ion-row style="margin-top:20px">
-        <ion-col size="6" class="chat-col"><!--TODO. (click)="funcionparamarcar el filtro."-->
-          <ion-button class="solved-task-filter" color="light">Resueltas</ion-button>
+        <ion-col size="6" class="chat-col">
+          <ion-button class="solved-task-filter" [strong] ="true" [color]="getSelectedTaskStatus() === 'solved' ? 'success' : 'light'" fill="solid" (click)="selectTaskStatus('solved')" >Resueltas</ion-button>
         </ion-col>
         <ion-col size="6" class="chat-col">
-          <ion-button class="solved-task-filter" color="light" >No Resueltas</ion-button>
+          <ion-button class="solved-task-filter" [strong] ="true" [color]="getSelectedTaskStatus() === 'unsolved' ? 'success' : 'light'" fill="solid" (click)="selectTaskStatus('unsolved')" >No Resueltas</ion-button>
         </ion-col>
       </ion-row>
     </div>

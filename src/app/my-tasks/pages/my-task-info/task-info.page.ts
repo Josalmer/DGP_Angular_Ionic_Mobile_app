@@ -35,4 +35,21 @@ export class TaskInfoPage implements OnInit {
     this.router.navigateByUrl('/tabs/my-tasks/' + id + '/chat');
   }
 
+  updateRateValues(rate: any):void{
+    if(rate.variant === 'dificulty')
+      this.task.rating.dificulty = rate.stars;
+    
+    if(rate.variant === 'utility')
+      this.task.rating.utility = rate.stars;
+
+      let rating = {
+        id_tarea : this.task.id_tarea,
+        text : "",
+        utilidad: this.task.rating.utility,
+        dificultad: this.task.rating.dificulty
+      }
+
+    this.taskService.rateTask(rating);
+  }
+
 }

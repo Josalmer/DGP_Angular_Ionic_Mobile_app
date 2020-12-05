@@ -52,4 +52,13 @@ export class MyTasksService {
     }
   }
 
+  rateTask(rate: any) : Observable<any>{
+    if(environment.simulated){
+      console.log("Has votado\n",rate);
+    }
+    else{
+      return this.http.post('tasks/rate/', rate);
+    }
+  }
+
 }

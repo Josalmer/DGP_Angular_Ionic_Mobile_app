@@ -42,8 +42,8 @@ export class MyTasksService {
         category: "psicomotricidad",
         rating: {
           text: "",
-          difficulty: 0,
-          utility: 0
+          difficulty: 3,
+          utility: 4
         }
       };
       return of({task: task});

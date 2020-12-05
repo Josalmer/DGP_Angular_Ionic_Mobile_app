@@ -36,8 +36,8 @@ export class TaskInfoPage implements OnInit {
   }
 
   updateRateValues(rate: any):void{
-    if(rate.variant === 'dificulty')
-      this.task.rating.dificulty = rate.stars;
+    if(rate.variant === 'difficulty')
+      this.task.rating.difficulty = rate.stars;
     
     if(rate.variant === 'utility')
       this.task.rating.utility = rate.stars;
@@ -46,7 +46,7 @@ export class TaskInfoPage implements OnInit {
         id_tarea : this.task.id_tarea,
         text : "",
         utilidad: this.task.rating.utility,
-        dificultad: this.task.rating.dificulty
+        dificultad: this.task.rating.difficulty
       }
 
     this.taskService.rateTask(rating);

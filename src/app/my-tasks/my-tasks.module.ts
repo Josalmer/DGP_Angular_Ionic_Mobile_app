@@ -25,7 +25,8 @@ import { StarRatingComponent } from './pages/my-task-info/components/star-rating
   declarations: [
     MyTasksPage,
     TaskInfoPage,
-    TaskChatPage
+    TaskChatPage,
+    StarRatingComponent
   ]
 })
 export class MyTasksPageModule {}

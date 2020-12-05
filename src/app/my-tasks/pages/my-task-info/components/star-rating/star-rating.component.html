@@ -1,0 +1,6 @@
+<ion-row>
+    <ion-col *ngFor="let star of stars">
+        <ion-img *ngIf="star <= starCount" class="star-rating-img" src="/assets/img/star-full.png"></ion-img>
+        <ion-img *ngIf="star > starCount"  class="star-rating-img" src="/assets/img/star-empty.png"></ion-img>
+    </ion-col>
+</ion-row>

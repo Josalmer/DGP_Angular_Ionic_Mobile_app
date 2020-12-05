@@ -42,6 +42,7 @@
                     <div class="task-rating-container-blue">
                       <h4 class="task-rating-title">Dificultad</h4>
                       <p class="task-rating-subtitle">Selecciona cuántas estrellas de Dificultad crees que tiene la tarea.</p>
+                      <app-star-rating [starCount]="task.rating.dificulty"></app-star-rating>
                     </div>
                   </ion-col>
                 </ion-row>
@@ -51,6 +52,7 @@
                     <div class="task-rating-container-green">
                       <h4 class="task-rating-title" >Utilidad</h4>
                       <p class="task-rating-subtitle">Selecciona cuántas estrellas de Utilidad crees que tiene la tarea.</p>
+                      <app-star-rating [starCount]="task.rating.utility"></app-star-rating>
                     </div>
                   </ion-col>
                 </ion-row>

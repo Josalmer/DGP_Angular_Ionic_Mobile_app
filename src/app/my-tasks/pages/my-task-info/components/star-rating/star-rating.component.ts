@@ -6,18 +6,19 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 
 
-export class StarRatingComponent{
+export class StarRatingComponent implements OnInit{
 
     stars: number[] = [1, 2, 3, 4, 5];
-    @Input() dificultyStars: number = 0;
-    @Input() utilityStars: number = 0;
+    @Input() starCount: number = 0;
 
     constructor() { }
 
+    ngOnInit(): void {
 
+    }
 
-    countStar(star) {
-      console.log('Value of star', star);
+    getStarCount() {
+      return this.starCount;
     }
 
 

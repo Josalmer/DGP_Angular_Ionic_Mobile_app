@@ -7,6 +7,7 @@ import { MyTasksPage } from './pages/my-tasks/my-tasks.page';
 import { TaskChatPage } from './pages/my-task-chat/task-chat.page';
 import { TaskInfoPage } from './pages/my-task-info/task-info.page';
 import { sharedModule } from '../shared/shared.module';
+import { StarRatingComponent } from './pages/my-task-info/components/star-rating/star-rating.component';
 
 
 @NgModule({

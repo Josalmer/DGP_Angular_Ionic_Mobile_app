@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { MyTasksService } from 'src/app/shared/services/my-tasks.service';
 
+
 @Component({
   selector: 'app-task-info',
   templateUrl: 'task-info.page.html'

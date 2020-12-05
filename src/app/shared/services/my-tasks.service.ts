@@ -31,7 +31,20 @@ export class MyTasksService {
       const task = {
         id_tarea : 0,
         title: "Átatelos",
-        fullDescription: 'La tarea consiste en atarse los zapatos. ¡Debes atarte los zapatos y mandar una foto con el resultado final!!'
+        shortDescription: "Tarea para atarse los zapatos",
+        status:{
+          finished: true,
+          finishedComment:"Muy bien terminada la tarea. Sí señor!"
+        },
+        fullDescription: "La tarea consiste en atarse los zapatos. ¡Debes atarte los zapatos y mandar una foto con el resultado final!!",
+        image: "/assets/img/charla-grupo.png",
+        mediaDescription: null,
+        category: "psicomotricidad",
+        rating: {
+          text: "",
+          dificulty: 0,
+          utility: 0
+        }
       };
       return of({task: task});
     } else {

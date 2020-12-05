@@ -26,6 +26,11 @@ Global
 	margin-top: 30px;
 }
 
+
+.margin-top-10 {
+	margin-top: 10px;
+}
+
 .icon-back {
 	font-size: 25px;
 	margin: auto;
@@ -283,6 +288,7 @@ Info de la tarea
 
 .card-info-task {
 	box-shadow: none;
+	position: relative;
 }
 
 .card-info-task ion-card-title {
@@ -347,6 +353,85 @@ Info de la tarea
 	border-bottom: 1px solid #dddddd;
 }
 
+.task-full-description-title{
+	font-size: 20px !important;
+	color: #000000;
+}
+
+.task-full-description-content{
+	font-size: 20px !important;
+}
+
+.task-full-description{
+	border: 1px solid #dddddd;
+	padding:10px 25px 10px 10px !important;
+
+}
+
+.info-task-resolve{
+	position: absolute;
+	top: 2px;
+	right: 0px;
+	text-align: right;
+	padding: 0 0 0 20%;
+	width: 40%;
+	height: 40%;
+	z-index: 0;
+}
+
+.btn-block{
+	display: block !important;
+	
+}
+
+
+/**********************************************
+Valoración de la tarea
+**********************************************/
+.task-rating-container-yellow{
+	background-color: rgb(255, 240, 174);
+	width: 70%;
+	margin: 0 auto;
+	padding:10px;
+	border-radius: 5px;
+	color:#000000;
+}
+
+.task-rating-container-green{
+	background-color: rgb(177, 255, 174);
+	width: 70%;
+	margin: 0 auto;
+	padding:10px;
+	border-radius: 5px;
+	color:#000000;
+}
+
+.task-rating-container-blue{
+	background-color: rgb(174, 239, 255);
+	width: 70%;
+	margin: 0 auto;
+	padding:10px;
+	border-radius: 5px;
+	color:#000000;
+}
+
+.task-rating-title{
+
+	margin:0px;
+	text-align: left;
+
+}
+.task-rating-title-init{
+
+	margin:0px;
+
+}
+
+.task-rating-subtitle{
+	
+	font-size: 15px;
+	text-align: left;
+}
 
 
 /**********************************************

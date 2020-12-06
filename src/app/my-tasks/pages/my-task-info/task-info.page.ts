@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { MyTasksService } from 'src/app/shared/services/my-tasks.service';
 
+
 @Component({
   selector: 'app-task-info',
   templateUrl: 'task-info.page.html'
@@ -32,6 +33,23 @@ export class TaskInfoPage implements OnInit {
 
   navigateToTaskChat(id: string): void {
     this.router.navigateByUrl('/tabs/my-tasks/' + id + '/chat');
+  }
+
+  updateRateValues(rate: any):void{
+    if(rate.variant === 'difficulty')
+      this.task.rating.difficulty = rate.stars;
+    
+    if(rate.variant === 'utility')
+      this.task.rating.utility = rate.stars;
+
+      let rating = {
+        id_tarea : this.task.id_tarea,
+        text : "",
+        utilidad: this.task.rating.utility,
+        dificultad: this.task.rating.difficulty
+      }
+
+    this.taskService.rateTask(rating);
   }
 
 }

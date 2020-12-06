@@ -15,14 +15,48 @@
     <div layout-position="content">
       <ion-card class="card-info-task">
         <ion-card-content>
-          <p [innerHTML]="task.fullDescription"></p>
+          <div class="task-full-description">
+          <h4 class="task-full-description-title" >Descripción:</h4><br>
+          <p class="task-full-description-content" [innerHTML]="task.fullDescription"></p>
+          <ion-img *ngIf="task.status.finished" class="img-tasks-not-found info-task-resolve" src="/assets/img/medalla.png"></ion-img>
+        </div>
         </ion-card-content>
 
-        <ion-grid class="margin-top-30">
+        <ion-grid class="margin-top-10">
           <ion-row class="ion-align-items-center">
             <ion-col size="12" class="ion-text-center">
-              <ion-button color="secondary"><span class="btn-secondary-dark-contrast"
-                  (click)="navigateToTaskChat(task.id_tarea)">Resolver tarea</span></ion-button>
+              <div *ngIf="!task.status.finished">
+                <ion-button color="secondary"><span class="btn-secondary-dark-contrast"
+                    (click)="navigateToTaskChat(task.id_tarea)">Resolver tarea</span></ion-button>
+              </div>
+              <div *ngIf="task.status.finished">
+                <ion-row>
+                  <ion-col>
+                    <div class="task-rating-container-yellow">
+                      <h4 class="task-rating-title-init">Valoración de la tarea</h4>
+                    </div>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col >
+                    <div class="task-rating-container-blue">
+                      <h4 class="task-rating-title">Dificultad</h4>
+                      <p class="task-rating-subtitle">Selecciona cuántas estrellas de Dificultad crees que tiene la tarea.</p>
+                      <app-star-rating [starCount]="task.rating.difficulty" [variant]="'difficulty'" (rateEmitter)="updateRateValues($event)"></app-star-rating>
+                    </div>
+                  </ion-col>
+                </ion-row>
+
+                <ion-row>
+                  <ion-col >
+                    <div class="task-rating-container-green">
+                      <h4 class="task-rating-title" >Utilidad</h4>
+                      <p class="task-rating-subtitle">Selecciona cuántas estrellas de Utilidad crees que tiene la tarea.</p>
+                      <app-star-rating [starCount]="task.rating.utility" [variant]="'utility'" (rateEmitter)="updateRateValues($event)"></app-star-rating>
+                    </div>
+                  </ion-col>
+                </ion-row>
+              </div>
             </ion-col>
           </ion-row>
         </ion-grid>

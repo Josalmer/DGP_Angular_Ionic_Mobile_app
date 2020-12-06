@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastAlertService } from 'src/app/shared/services/toast-alert.service';
 import { MyTasksService } from '../../../shared/services/my-tasks.service';
-import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-my-tasks',
@@ -13,7 +12,9 @@ export class MyTasksPage implements OnInit {
   myTasks: any;
   filteredTasks: any;
   categories = ['números', 'escritura', 'psicomotricidad'];
+  taskStatus = ['solved', 'unsolved'];
   selectedCategory = '';
+  selectedStatus = '';
   search = '';
 
   constructor(
@@ -48,6 +49,15 @@ export class MyTasksPage implements OnInit {
     if (this.selectedCategory !== '') {
       this.filteredTasks = this.filteredTasks.filter(task => task.category === this.selectedCategory);
     }
+    if (this.selectedStatus !== '') {
+      if (this.selectedStatus === 'solved') {
+        this.filteredTasks = this.filteredTasks.filter(task => task.status.finished == true);
+      }
+      if (this.selectedStatus === 'unsolved') {
+        this.filteredTasks = this.filteredTasks.filter(task => task.status.finished == false);
+      }
+    }
+
   }
 
   selectTask(title: string, search: string): boolean {
@@ -67,7 +77,18 @@ export class MyTasksPage implements OnInit {
     this.filterTask(this.search);
   }
 
-  taskImage(image: string): string {
-    return (image !== '' && image !== 'null') ? environment.backend_url + '/' + image : "../../../../assets/img/charla-grupo.png";
+  selectTaskStatus(status: string): void {
+    if (status === this.selectedStatus) {
+      this.selectedStatus = '';
+    } else {
+      this.selectedStatus = status;
+    }
+
+    this.filterTask(this.search);
   }
+
+  getSelectedTaskStatus(): string {
+    return this.selectedStatus;
+  }
+
 }

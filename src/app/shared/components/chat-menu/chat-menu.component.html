@@ -1,10 +1,10 @@
 <div class="toolbar-chat-container">
   <div>
     <ion-row>
-      <ion-col class="chat-col" size="9">
+      <ion-col aria-label="Escribir mensaje" class="chat-col" size="9">
         <ion-input class="message-input" [(ngModel)]="currentMessage" placeholder="Escribe tu mensaje..."></ion-input>
       </ion-col>
-      <ion-col class="chat-col" size="3" (click)="sendMessage()">
+      <ion-col aria-label="Mandar mensaje" class="chat-col" size="3" (click)="sendMessage()">
         <ion-img class="img-send-text-message ion-text-center" src="../assets/img/enviar.png"></ion-img>
       </ion-col>
     </ion-row>
@@ -12,16 +12,16 @@
   <div>
     <ion-row>
       <ion-col class="chat-col" size="4">
-        <ion-input class="file-input" no-padding type="file" accept="image/*" capture="camera" (ionChange)="onInputFileChange($event)">
+        <ion-input aria-label="Añadir foto" class="file-input" no-padding type="file" accept="image/*" capture="camera" (ionChange)="onInputFileChange($event)">
         </ion-input>
         <ion-img class="chat-img-attach ion-text-center attach-img" src="../assets/img/foto.png"></ion-img>
       </ion-col>
-      <ion-col class="chat-col" size="4">
+      <ion-col aria-label="Añadir audio" class="chat-col" size="4">
         <ion-input class="file-input" no-padding type="file" (ionChange)="onInputFileChange($event)">
         </ion-input>
         <ion-img class="chat-img-attach ion-text-center attach-audio" src="../assets/img/altavoz.png"></ion-img>
       </ion-col>
-      <ion-col class="chat-col" size="4">
+      <ion-col aria-label="Añadir archivo" class="chat-col" size="4">
         <ion-input class="file-input" no-padding type="file" (ionChange)="onInputFileChange($event)">
         </ion-input>
         <ion-img class="chat-img-attach ion-text-center attach-file" src="../assets/img/papel.png"></ion-img>

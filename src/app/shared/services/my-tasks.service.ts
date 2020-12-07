@@ -34,7 +34,7 @@ export class MyTasksService {
         shortDescription: "Tarea para atarse los zapatos",
         status:{
           finished: true,
-          finishedComment:"Muy bien terminada la tarea. Sí señor!"
+          finishedComment:"Muy bien terminada la tarea. Sí señor! Has hecho un excelente trabajo. Sigue así!"
         },
         fullDescription: "La tarea consiste en atarse los zapatos. ¡Debes atarte los zapatos y mandar una foto con el resultado final!!",
         image: "/assets/img/charla-grupo.png",

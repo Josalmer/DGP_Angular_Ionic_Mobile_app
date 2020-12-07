@@ -33,7 +33,8 @@
                 <ion-row>
                   <ion-col>
                     <div class="task-rating-container-yellow">
-                      <h4 class="task-rating-title-init">Valoración de la tarea</h4>
+                      <h4 class="task-rating-title-init">Valoración de la tarea: </h4>
+                      <p style="text-align: left; padding-left: 10px;">{{task.status.finishedComment}}</p>
                     </div>
                   </ion-col>
                 </ion-row>
@@ -54,6 +55,13 @@
                       <p class="task-rating-subtitle">Selecciona cuántas estrellas de Utilidad crees que tiene la tarea.</p>
                       <app-star-rating [starCount]="task.rating.utility" [variant]="'utility'" (rateEmitter)="updateRateValues($event)"></app-star-rating>
                     </div>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col >
+                    <div class="task-rating-container-pink" (click)="navigateToTaskChat(task.id_tarea)">
+                      <h4 class="task-rating-title" >Ver Chat de la tarea</h4>
+                     </div>
                   </ion-col>
                 </ion-row>
               </div>

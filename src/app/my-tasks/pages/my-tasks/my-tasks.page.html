@@ -33,14 +33,14 @@
     </div>
   
     <div layout-position="content">
-      <ion-row *ngIf="filteredTasks.length === 0" class="margin-bot-20">
+      <ion-row aria-label="No hay tareas con esa selección. Inténtalo de nuevo escribiendo el nombre de la tarea." *ngIf="filteredTasks.length === 0" class="margin-bot-20">
         <ion-col class="chat-col">
           <ion-img class="img-tasks-not-found" src="/assets/img/confuso.png"></ion-img>
           <h3 class="width-80">No hay tareas con esa selección. Inténtalo de nuevo escribiendo el nombre de la tarea.</h3>
         </ion-col>
       </ion-row>
       <div class="my-groups">
-        <ion-card class="task-card" *ngFor="let task of filteredTasks" (click)="navigateToTask(task.id_tarea)">
+        <ion-card [attr.aria-label]="task.title" class="task-card" *ngFor="let task of filteredTasks" (click)="navigateToTask(task.id_tarea)">
           <ion-row>
             <ion-col class="chat-col" size="3">
               <ion-img [src]="categoryImage(task.category)" class="group-img"></ion-img>

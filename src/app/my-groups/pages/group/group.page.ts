@@ -39,7 +39,7 @@ export class groupPage implements OnInit {
       category: 'group'
     };
     this.chatService.getChat(params).subscribe(
-      response => this.messages = response.mensajes
+      response => this.messages = response.mensajes.reverse()
     );
   }
 }

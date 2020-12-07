@@ -47,17 +47,16 @@ export class MyTasksPage implements OnInit {
     this.search = search;
     this.filteredTasks = search === '' ? this.myTasks : this.myTasks.filter(task => this.selectTask(task.title, search));
     if (this.selectedCategory !== '') {
-      this.filteredTasks = this.filteredTasks.filter(task => task.category === this.selectedCategory);
+      this.filteredTasks = this.filteredTasks.filter(task => task.category.toLowerCase() === this.selectedCategory);
     }
     if (this.selectedStatus !== '') {
       if (this.selectedStatus === 'solved') {
-        this.filteredTasks = this.filteredTasks.filter(task => task.status.finished == true);
+        this.filteredTasks = this.filteredTasks.filter(task => task.status.finished === true);
       }
       if (this.selectedStatus === 'unsolved') {
-        this.filteredTasks = this.filteredTasks.filter(task => task.status.finished == false);
+        this.filteredTasks = this.filteredTasks.filter(task => task.status.finished === false);
       }
     }
-
   }
 
   selectTask(title: string, search: string): boolean {
@@ -91,4 +90,7 @@ export class MyTasksPage implements OnInit {
     return this.selectedStatus;
   }
 
+  categoryImage(category: string): string {
+    return '/assets/img/' + category.toLowerCase() + '.png';
+  }
 }

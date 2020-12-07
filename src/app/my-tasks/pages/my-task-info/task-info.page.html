@@ -15,6 +15,7 @@
     <div layout-position="content">
       <ion-card class="card-info-task">
         <ion-card-content>
+          <ion-img *ngIf="task.mediaDescription" [src]="taskImage()"></ion-img>
           <div class="task-full-description">
           <h4 class="task-full-description-title" >Descripción:</h4><br>
           <p class="task-full-description-content" [innerHTML]="task.fullDescription"></p>
@@ -30,11 +31,27 @@
                     (click)="navigateToTaskChat(task.id_tarea)">Resolver tarea</span></ion-button>
               </div>
               <div *ngIf="task.status.finished">
-                <ion-row>
+                <ion-row *ngIf="task.status.finishedComment">
                   <ion-col>
                     <div class="task-rating-container-yellow">
-                      <h4 class="task-rating-title-init">Valoración de la tarea: </h4>
+                      <h4 class="task-rating-title-init">Comentario del tutor: </h4>
                       <p style="text-align: left; padding-left: 10px;">{{task.status.finishedComment}}</p>
+                    </div>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <div class="task-rating-container-pink">
+                      <h4 class="task-rating-title-init">Valoración de la tarea: </h4>
+                      <p *ngIf="task.rating.text" style="text-align: left; padding-left: 10px;">{{task.rating.text}}</p>
+                      <ion-row *ngIf="!task.rating.text">
+                        <ion-col size=10>
+                          <ion-input class="message-input" [(ngModel)]="userValoration" placeholder="Escribe tu valoración..."></ion-input>
+                        </ion-col>
+                        <ion-col size=2 (click)="updateRateValues({variant: 'text'})">
+                          <ion-icon name="caret-forward-outline" size=large style="padding-top: 8px;"></ion-icon>
+                        </ion-col>
+                      </ion-row>
                     </div>
                   </ion-col>
                 </ion-row>

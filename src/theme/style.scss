@@ -26,9 +26,17 @@ Global
 	margin-top: 30px;
 }
 
-
 .margin-top-10 {
 	margin-top: 10px;
+}
+
+.margin-bot-20 {
+  margin-bottom: 20px;
+}
+
+.width-80 {
+  width: 80%;
+  margin: auto;
 }
 
 .icon-back {
@@ -236,6 +244,7 @@ Componente del chat
 }
 
 .message-input {
+  padding-left: 20px !important;
 	margin-top: 5%;
 	background-color: white;
 	margin-left: 5%;

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { MyTasksService } from 'src/app/shared/services/my-tasks.service';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -11,6 +12,7 @@ import { MyTasksService } from 'src/app/shared/services/my-tasks.service';
 export class TaskInfoPage implements OnInit {
   taskId: string;
   task: any;
+  userValoration = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -35,21 +37,32 @@ export class TaskInfoPage implements OnInit {
     this.router.navigateByUrl('/tabs/my-tasks/' + id + '/chat');
   }
 
-  updateRateValues(rate: any):void{
-    if(rate.variant === 'difficulty')
+  updateRateValues(rate: any): void {
+    if (rate.variant === 'text') {
+      console.log('text');
+      this.task.rating.text = this.userValoration;
+    }
+    if (rate.variant === 'difficulty') {
       this.task.rating.difficulty = rate.stars;
-    
-    if(rate.variant === 'utility')
+    }
+    if (rate.variant === 'utility') {
       this.task.rating.utility = rate.stars;
+    }
 
-      let rating = {
-        id_tarea : this.task.id_tarea,
-        text : "",
-        utilidad: this.task.rating.utility,
-        dificultad: this.task.rating.difficulty
-      }
+    const rating = {
+      id_task: this.task.id_tarea,
+      text: this.task.rating.text,
+      utility: this.task.rating.utility,
+      difficulty: this.task.rating.difficulty
+    };
 
-    this.taskService.rateTask(rating);
+    this.taskService.rateTask(rating).subscribe(
+      response => console.log("request")
+    );
+  }
+
+  taskImage(): string {
+    return environment.backend_url + '/' + this.task.mediaDescription;
   }
 
 }

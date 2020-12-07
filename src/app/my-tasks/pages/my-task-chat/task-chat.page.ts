@@ -41,7 +41,7 @@ export class TaskChatPage implements OnInit {
       category: 'task'
     };
     this.chatService.getChat(params).subscribe(
-      response => this.chatMessages = response.mensajes
+      response => this.chatMessages = response.mensajes.reverse()
     );
   }
 

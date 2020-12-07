@@ -19,7 +19,7 @@ export class userProgressPage implements OnInit {
   getProgress() {
     this.profileService.getProgress().subscribe(
       response => {
-        this.categories = response.categorias;
+        this.categories = response.categories;
       },
       error => {
         alert(error);

@@ -60,8 +60,7 @@ export class MyProfileService {
       ];
       return of({ categorias: categories });
     } else {
-      //return this.http.get('users/progress'));
-      return;
+      return this.http.get('tasks/progress');
     }
   }
 }

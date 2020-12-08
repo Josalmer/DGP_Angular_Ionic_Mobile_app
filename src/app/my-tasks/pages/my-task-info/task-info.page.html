@@ -26,7 +26,7 @@
         <ion-grid class="margin-top-10">
           <ion-row class="ion-align-items-center">
             <ion-col size="12" class="ion-text-center">
-              <div *ngIf="!task.status.finished">
+              <div aria-label="Resolver la tarea" *ngIf="!task.status.finished">
                 <ion-button style="width: 70%;" color="success"><span class="btn-secondary-dark-contrast"
                     (click)="navigateToTaskChat(task.id_tarea)">Resolver tarea</span></ion-button>
               </div>
@@ -39,7 +39,7 @@
                     </div>
                   </ion-col>
                 </ion-row>
-                <ion-row>
+                <ion-row aria-label="Puedes escribir qué te ha parecido la tarea">
                   <ion-col>
                     <div class="task-rating-container-pink">
                       <h4 class="task-rating-title">Valoración de la tarea: </h4>
@@ -55,7 +55,7 @@
                     </div>
                   </ion-col>
                 </ion-row>
-                <ion-row>
+                <ion-row aria-label="¿Te ha parecido muy difícil?">
                   <ion-col >
                     <div class="task-rating-container-blue">
                       <h4 class="task-rating-title">Dificultad</h4>
@@ -65,8 +65,8 @@
                   </ion-col>
                 </ion-row>
 
-                <ion-row>
-                  <ion-col >
+                <ion-row aria-label="¿Te ha servido?">
+                  <ion-col>
                     <div class="task-rating-container-green">
                       <h4 class="task-rating-title" >Utilidad</h4>
                       <p class="task-rating-subtitle">Selecciona cuántas estrellas de Utilidad crees que tiene la tarea.</p>
@@ -74,7 +74,7 @@
                     </div>
                   </ion-col>
                 </ion-row>
-                <ion-row>
+                <ion-row aria-label="Ver el chat de la tarea">
                   <ion-col >
                     <div class="task-rating-container-chat" (click)="navigateToTaskChat(task.id_tarea)">
                       <h4 style="text-align: center;" >Ver Chat de la tarea</h4>

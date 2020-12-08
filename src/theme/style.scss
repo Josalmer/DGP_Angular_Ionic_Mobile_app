@@ -291,8 +291,8 @@ Info de la tarea
 **********************************************/
 
 .btn-secondary-dark-contrast {
-	color: #000000;
-	font-weight: 500;
+	color: #ffffff;
+	font-weight: 600;
 }
 
 .card-info-task {
@@ -399,49 +399,58 @@ Valoración de la tarea
 **********************************************/
 .task-rating-container-yellow{
 	background-color: rgb(255, 240, 174);
-	width: 70%;
+	width: 100%;
 	margin: 0 auto;
-	padding:10px;
+	padding:15px;
 	border-radius: 5px;
 	color:#000000;
+	text-align: left;
 }
 
 .task-rating-container-green{
 	background-color: rgb(177, 255, 174);
-	width: 70%;
+	width: 100%;
 	margin: 0 auto;
-	padding:10px;
+	padding:15px;
 	border-radius: 5px;
 	color:#000000;
+	text-align: left;
 }
 
 .task-rating-container-blue{
 	background-color: rgb(174, 239, 255);
-	width: 70%;
+	width: 100%;
 	margin: 0 auto;
-	padding:10px;
+	padding:15px;
 	border-radius: 5px;
 	color:#000000;
-	text-align: center;
+	text-align: left;
 }
 
 .task-rating-container-pink{
 	margin-top: 20px !important;
 	background-color: rgb(243, 194, 237);
-	width: 70%;
+	width: 100%;
 	margin: 0 auto;
-	padding:10px;
+	padding:15px;
 	border-radius: 5px;
 	color:#000000;
-	box-shadow:  2px 2px rgb(134, 134, 134);
+}
+
+.task-rating-container-chat{
+	background-color: rgb(243, 194, 237);
+	width: 100%;
+	margin: 0 auto;
+	padding:2px;
+	border-radius: 5px;
+	color:#000000;
 }
 
 .task-rating-container-pink h4{
-	text-align: center;
+	text-align: left;
 }
 
 .task-rating-title{
-
 	margin:0px;
 	text-align: left;
 

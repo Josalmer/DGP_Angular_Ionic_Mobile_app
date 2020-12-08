@@ -27,29 +27,29 @@
           <ion-row class="ion-align-items-center">
             <ion-col size="12" class="ion-text-center">
               <div *ngIf="!task.status.finished">
-                <ion-button color="secondary"><span class="btn-secondary-dark-contrast"
+                <ion-button style="width: 70%;" color="success"><span class="btn-secondary-dark-contrast"
                     (click)="navigateToTaskChat(task.id_tarea)">Resolver tarea</span></ion-button>
               </div>
               <div *ngIf="task.status.finished">
                 <ion-row *ngIf="task.status.finishedComment">
                   <ion-col>
                     <div [attr.aria-label]="task.status.finishedComment" class="task-rating-container-yellow">
-                      <h4 class="task-rating-title-init">Comentario del tutor: </h4>
-                      <p style="text-align: left; padding-left: 10px;">{{task.status.finishedComment}}</p>
+                      <h4 class="task-rating-title">Comentario del tutor: </h4>
+                      <p>{{task.status.finishedComment}}</p>
                     </div>
                   </ion-col>
                 </ion-row>
                 <ion-row>
                   <ion-col>
                     <div class="task-rating-container-pink">
-                      <h4 class="task-rating-title-init">Valoración de la tarea: </h4>
+                      <h4 class="task-rating-title">Valoración de la tarea: </h4>
                       <p *ngIf="task.rating.text" style="text-align: left; padding-left: 10px;">{{task.rating.text}}</p>
                       <ion-row *ngIf="!task.rating.text">
                         <ion-col size=10>
                           <ion-input class="message-input" [(ngModel)]="userValoration" placeholder="Escribe tu valoración..."></ion-input>
                         </ion-col>
                         <ion-col size=2 (click)="updateRateValues({variant: 'text'})">
-                          <ion-icon name="caret-forward-outline" size=large style="padding-top: 8px;"></ion-icon>
+                          <ion-icon name="caret-forward-outline" size=large style="padding-top: 15px;"></ion-icon>
                         </ion-col>
                       </ion-row>
                     </div>
@@ -76,8 +76,8 @@
                 </ion-row>
                 <ion-row>
                   <ion-col >
-                    <div class="task-rating-container-pink" (click)="navigateToTaskChat(task.id_tarea)">
-                      <h4 class="task-rating-title" >Ver Chat de la tarea</h4>
+                    <div class="task-rating-container-chat" (click)="navigateToTaskChat(task.id_tarea)">
+                      <h4 style="text-align: center;" >Ver Chat de la tarea</h4>
                      </div>
                   </ion-col>
                 </ion-row>

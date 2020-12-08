@@ -17,12 +17,12 @@ export class MyGroupsService {
   getGroups(): Observable<any> {
     if (environment.simulated) {
       const groups = [
-        { name: 'Actividades 1', identifier: 1, memberCount: 31, messages: 10 },
-        { name: 'Apoyo 3', identifier: 2, memberCount: 20, messages: 5 },
-        { name: 'Centro', identifier: 3, memberCount: 53, messages: 45 },
-        { name: 'La Chana', identifier: 4, memberCount: 45, messages: 32 },
-        { name: 'Baile', identifier: 5, memberCount: 13, messages: 45 },
-        { name: 'Matemáticas', identifier: 6, memberCount: 45, messages: 33 }
+        { name: 'Actividades 1', identifier: "1", memberCount: 31, messages: 10 },
+        { name: 'Apoyo 3', identifier: "2", memberCount: 20, messages: 5 },
+        { name: 'Centro', identifier: "3", memberCount: 53, messages: 45 },
+        { name: 'La Chana', identifier: "4", memberCount: 45, messages: 32 },
+        { name: 'Baile', identifier: "5", memberCount: 13, messages: 45 },
+        { name: 'Matemáticas', identifier: "6", memberCount: 45, messages: 33 }
       ];
 
       return of({ grupos: groups });

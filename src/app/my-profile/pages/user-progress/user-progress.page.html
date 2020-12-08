@@ -12,7 +12,7 @@
     
         <div layout-position="content">
           <div class="my-groups">
-            <ion-card class="progress-card" *ngFor="let category of categories" >
+            <ion-card [attr.aria-label]="category.category" class="progress-card" *ngFor="let category of categories" >
               <ion-row *ngIf="category.done == category.total">
                 <ion-col>
                   <ion-img src="assets/img/medalla.png" class="completed"></ion-img>

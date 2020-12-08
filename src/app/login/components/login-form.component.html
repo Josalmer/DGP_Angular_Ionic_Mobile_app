@@ -2,7 +2,7 @@
   <h2>Introduce tu combinación</h2>
 </ion-row>
 <div class="animal-card-container" *ngIf="pictograms">
-  <ion-card class="animal-card" *ngFor="let pictogram of pictograms" (click)="addAnimal(pictogram)">
+  <ion-card [attr.aria-label]="pictogram.name" class="animal-card" *ngFor="let pictogram of pictograms" (click)="addAnimal(pictogram)">
     <ion-img [src]="imgUrl(pictogram.image)"></ion-img>
   </ion-card>
 </div>
@@ -12,7 +12,7 @@
       <ion-img [src]="imgUrl(pictogram.image)"></ion-img>
     </ion-card>
   </ion-col>
-  <ion-col (click)="clear()">
+  <ion-col aria-label="Borrar" (click)="clear()">
     <ion-img src="../../../../assets/img/borrar.png"></ion-img>
   </ion-col>
 </ion-row>

@@ -60,7 +60,12 @@ export class TaskInfoPage implements OnInit {
   }
 
   taskImage(): string {
-    return environment.backend_url + '/' + this.task.mediaDescription;
+    if(environment.simulated){
+      return '/assets/img/zapatos.jpeg';
+    }else{
+      return environment.backend_url + '/' + this.task.mediaDescription;
+    }
+    
   }
 
 }

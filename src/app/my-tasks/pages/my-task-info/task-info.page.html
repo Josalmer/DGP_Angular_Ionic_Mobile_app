@@ -14,15 +14,15 @@
 
     <div layout-position="content">
       <ion-card [attr.aria-label]="task.fullDescription" class="card-info-task">
+        <ion-img *ngIf="task.status.finished" class="img-tasks-not-found info-task-resolve" src="/assets/img/medalla.png"></ion-img>
         <ion-card-content>
           <ion-img *ngIf="task.mediaDescription" [src]="taskImage()"></ion-img>
           <div class="task-full-description">
-          <h4 class="task-full-description-title" >Descripción:</h4><br>
-          <p class="task-full-description-content" [innerHTML]="task.fullDescription"></p>
-          <ion-img *ngIf="task.status.finished" class="img-tasks-not-found info-task-resolve" src="/assets/img/medalla.png"></ion-img>
+            <h4 class="task-full-description-title" >Descripción:</h4><br>
+            <p class="task-full-description-content" [innerHTML]="task.fullDescription"></p>
         </div>
-        </ion-card-content>
 
+        </ion-card-content>
         <ion-grid class="margin-top-10">
           <ion-row class="ion-align-items-center">
             <ion-col size="12" class="ion-text-center">

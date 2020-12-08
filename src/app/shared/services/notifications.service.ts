@@ -57,7 +57,7 @@ export class NotificationsService {
 
     PushNotifications.addListener('pushNotificationReceived',
       (notification: PushNotification) => {
-        alert(notification.data.message);
+        // alert(notification.data.message);
       }
     );
   }

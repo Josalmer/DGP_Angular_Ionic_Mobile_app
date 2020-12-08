@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { MyProfileService } from '../../../shared/services/my-profile.service';
 
 @Component({
@@ -9,11 +10,14 @@ export class userProgressPage implements OnInit {
   categories: any;
 
   constructor(
-    private profileService: MyProfileService
+    private profileService: MyProfileService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    this.getProgress();
+    this.route.params.subscribe(
+      response => this.getProgress()
+    );
   }
 
   getProgress() {

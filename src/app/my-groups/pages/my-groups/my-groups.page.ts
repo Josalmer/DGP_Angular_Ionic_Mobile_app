@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MyGroupsService } from '../../../shared/services/my-groups.service';
 
 @Component({
@@ -11,11 +11,14 @@ export class MyGroupsPage implements OnInit {
 
   constructor(
     private groupsService: MyGroupsService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
     ) { }
 
   ngOnInit(): void {
-    this.loadGroups();
+    this.route.params.subscribe(
+      response => this.loadGroups()
+    );
   }
 
   loadGroups(): void {

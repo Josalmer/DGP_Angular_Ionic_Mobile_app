@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastAlertService } from 'src/app/shared/services/toast-alert.service';
 import { MyTasksService } from '../../../shared/services/my-tasks.service';
 
@@ -18,13 +18,16 @@ export class MyTasksPage implements OnInit {
   search = '';
 
   constructor(
+    private route: ActivatedRoute,
     private tasksService: MyTasksService,
     private toastAlert: ToastAlertService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
-    this.loadTasks();
+    this.route.params.subscribe(
+      response => this.loadTasks()
+    );
   }
 
   loadTasks(): void {

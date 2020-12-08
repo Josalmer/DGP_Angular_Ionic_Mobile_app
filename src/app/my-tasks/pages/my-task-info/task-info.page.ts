@@ -56,9 +56,7 @@ export class TaskInfoPage implements OnInit {
       difficulty: this.task.rating.difficulty
     };
 
-    this.taskService.rateTask(rating).subscribe(
-      response => console.log("request")
-    );
+    this.taskService.rateTask(rating).subscribe();
   }
 
   taskImage(): string {

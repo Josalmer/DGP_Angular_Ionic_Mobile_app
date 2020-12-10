@@ -38,7 +38,7 @@ export class MyTasksService {
         },
         fullDescription: "La tarea consiste en atarse los zapatos. ¡Debes atarte los zapatos y mandar una foto con el resultado final!!",
         image: "/assets/img/charla-grupo.png",
-        mediaDescription: null,
+        mediaDescription: " ",
         category: "psicomotricidad",
         rating: {
           text: "",

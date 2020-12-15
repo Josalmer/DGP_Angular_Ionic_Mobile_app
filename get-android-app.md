@@ -1,6 +1,7 @@
 # npm run build
 
 # npx cap add android
+# npx cap copy android
 
 # cordova-res android --skip-config --copy
 

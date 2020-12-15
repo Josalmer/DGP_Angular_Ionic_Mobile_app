@@ -1,16 +1,16 @@
-<ion-content>
+<ion-content *ngIf="task">
 
   <app-page-layout>
 
     <div layout-position="main">
       <ion-row class="title-row">
-        <ion-col size="2" (click)="navigateBack()">
+        <ion-col aria-label="Volver" size="2" (click)="navigateBack()">
           <ion-icon class="back-arrow" name="caret-back-circle-outline"></ion-icon>
         </ion-col>
-        <ion-col size="8">
-          <ion-title>
+        <ion-col size="8" class="flex-center">
+          <h2 style="line-height: 0px;">
             {{task.title}}
-          </ion-title>
+          </h2>
         </ion-col>
         <ion-col size="2" >
         </ion-col>
@@ -24,7 +24,7 @@
     <div layout-position="footer">
       <ion-row>
         <ion-col style="padding: 0 !important;">
-          <app-chat-menu (sendMessageEmitter)="sendMessage($event)"></app-chat-menu>
+          <app-chat-menu (reloadChat)="loadChat()" type="task" [id]="taskId"></app-chat-menu>
         </ion-col>
       </ion-row>
     </div>

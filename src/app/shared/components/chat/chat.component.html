@@ -1,11 +1,12 @@
 <div class="chat-main-container">
-  <ion-item *ngFor="let message of messages">
+  <ion-item [attr.aria-label]="message.emisor + ' dice, ' + message.body" *ngFor="let message of messages">
     <ion-label [class]="{ 'message-send': message.emisor_id === user, 'message-tutor': message.tutor === true,'message-receive': message.emisor_id !== user}">
       <h1 *ngIf="message.tutor; then thenBlock else elseBlock"></h1>
-      <ng-template #thenBlock>{{message.emisor}} - Tutor del grupo</ng-template>
-      <ng-template #elseBlock>{{message.emisor}}</ng-template>  
+      <ng-template #thenBlock>{{message.emisor}} - Tutor</ng-template>
+      <ng-template #elseBlock>{{message.emisor}}</ng-template>
+      <ion-img *ngIf="message.path" [src]="chatImg(message.path)"></ion-img>
       <h2 class ="message-text">{{ message.body }}</h2>
-      <h4 class="ion-text-right">{{ message.created }}</h4>
+      <h4 class="ion-text-right">{{ message.created | date:'d/M/yy, HH:mm' }}</h4>
     </ion-label>
   </ion-item>
 </div>

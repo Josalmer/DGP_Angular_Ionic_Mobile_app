@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MyProfileService } from '../../services/my-profile.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-chat',
@@ -15,5 +16,10 @@ export class chatComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.profileService.getCurrentUser().id;
+    console.log(this.messages);
+  }
+
+  chatImg(messageImg: string): string {
+    return environment.backend_url + '/' + messageImg;
   }
 }

@@ -41,25 +41,12 @@ export class TaskChatPage implements OnInit {
       category: 'task'
     };
     this.chatService.getChat(params).subscribe(
-      response => this.chatMessages = response.mensajes
+      response => this.chatMessages = response.mensajes.reverse()
     );
   }
 
   navigateBack(id: string): void {
     this.router.navigateByUrl('/tabs/my-tasks/' + id + '/info');
-  }
-
-  sendMessage(message: string): void {
-    const params = {
-      identifier: this.taskId,
-      body: message,
-      category: 'task',
-      mimeType: 'txt'
-    };
-    this.chatService.sendMessage(params).subscribe(
-      response => this.loadTask(),
-      error => alert(error)
-    );
   }
 
 }

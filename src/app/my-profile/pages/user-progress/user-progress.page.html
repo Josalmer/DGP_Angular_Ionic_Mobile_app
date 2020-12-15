@@ -1,0 +1,51 @@
+    <ion-content *ngIf="categories">
+      <app-page-layout>
+        <div layout-position="main">
+          <ion-row class="title-row">
+            <ion-col>
+              <ion-title>
+                Resultados
+              </ion-title>
+            </ion-col>
+          </ion-row>
+        </div>
+    
+        <div layout-position="content">
+          <div class="my-groups">
+            <ion-card [attr.aria-label]="category.category" class="progress-card" *ngFor="let category of categories" >
+              <ion-row *ngIf="category.done == category.total">
+                <ion-col>
+                  <ion-img src="assets/img/medalla.png" class="completed"></ion-img>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col class="chat-col" size="3">
+                  <ion-img src="/assets/img/{{lowercase(category.category)}}.png" class="group-img"></ion-img>
+                </ion-col>
+                <ion-col class="chat-col" size="8">
+                  <h3 class="ion-text-left">{{category.category}}</h3>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col *ngIf="category.done == category.total ? 'success':'warning'; let color">
+                  <!--<p class="ion-text-center">{{(category.done/category.total)*100}}%</p> -->
+                  <ion-progress-bar class="progress-b" color="{{color}}" [value]="category.done/category.total"></ion-progress-bar>
+                </ion-col>
+              </ion-row>
+              <ion-row *ngIf="{ a: category.total-category.done};let tasks">
+                <ion-col *ngIf="tasks.a > 1">
+                  <h5 class="ion-text-center">Te quedan solo {{tasks.a}} tareas. ¡Ánimo!</h5>
+                </ion-col>
+                <ion-col *ngIf="tasks.a == 1">
+                  <h5 class="ion-text-center">Te queda solo {{tasks.a}} tarea. ¡Ánimo!</h5>
+                </ion-col>
+                <ion-col *ngIf="tasks.a == 0">
+                  <h5 class="ion-text-center">¡Has completado todas las tareas!</h5>
+                </ion-col>
+              </ion-row>    
+            </ion-card>
+          </div>
+        </div>
+    
+      </app-page-layout>
+    </ion-content>

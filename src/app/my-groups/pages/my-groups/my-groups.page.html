@@ -14,13 +14,13 @@
 
     <div layout-position="content">
       <div class="my-groups">
-        <ion-card class="group-card" *ngFor="let group of myGroups" (click)="navigateToGroup(group.identifier,group)">
+        <ion-card [attr.aria-label]="group.name" class="group-card" *ngFor="let group of myGroups" (click)="navigateToGroup(group.identifier)">
           <ion-row>
             <ion-col class="chat-col" size="3">
-              <ion-img src="../../../../assets/img/charla-grupo.png" class="group-img"></ion-img>
+              <ion-img src="/assets/img/charla-grupo.png" class="group-img"></ion-img>
             </ion-col>
             <ion-col class="chat-col" size="6">
-              <h3 class="inside-group-card">{{ group.name }}</h3>
+              <h3 class="ion-text-left">{{ group.name }}</h3>
             </ion-col>
             <ion-col class="chat-col" size="3">
               <ion-icon name="chatbubbles-outline" class="group-chat-icon"></ion-icon>

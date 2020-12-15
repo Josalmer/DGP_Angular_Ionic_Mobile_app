@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { MyTasksService } from 'src/app/shared/services/my-tasks.service';
+import { environment } from 'src/environments/environment';
+
 
 @Component({
   selector: 'app-task-info',
@@ -10,6 +12,7 @@ import { MyTasksService } from 'src/app/shared/services/my-tasks.service';
 export class TaskInfoPage implements OnInit {
   taskId: string;
   task: any;
+  userValoration = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -32,6 +35,37 @@ export class TaskInfoPage implements OnInit {
 
   navigateToTaskChat(id: string): void {
     this.router.navigateByUrl('/tabs/my-tasks/' + id + '/chat');
+  }
+
+  updateRateValues(rate: any): void {
+    if (rate.variant === 'text') {
+      console.log('text');
+      this.task.rating.text = this.userValoration;
+    }
+    if (rate.variant === 'difficulty') {
+      this.task.rating.difficulty = rate.stars;
+    }
+    if (rate.variant === 'utility') {
+      this.task.rating.utility = rate.stars;
+    }
+
+    const rating = {
+      id_task: this.task.id_tarea,
+      text: this.task.rating.text,
+      utility: this.task.rating.utility,
+      difficulty: this.task.rating.difficulty
+    };
+
+    this.taskService.rateTask(rating).subscribe();
+  }
+
+  taskImage(): string {
+    if(environment.simulated){
+      return '/assets/img/zapatos.jpeg';
+    }else{
+      return environment.backend_url + '/' + this.task.mediaDescription;
+    }
+    
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastAlertService } from 'src/app/shared/services/toast-alert.service';
 import { MyTasksService } from '../../../shared/services/my-tasks.service';
 
@@ -11,15 +11,23 @@ export class MyTasksPage implements OnInit {
 
   myTasks: any;
   filteredTasks: any;
+  categories = ['números', 'escritura', 'psicomotricidad'];
+  taskStatus = ['solved', 'unsolved'];
+  selectedCategory = '';
+  selectedStatus = '';
+  search = '';
 
   constructor(
+    private route: ActivatedRoute,
     private tasksService: MyTasksService,
     private toastAlert: ToastAlertService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
-    this.loadTasks();
+    this.route.params.subscribe(
+      response => this.loadTasks()
+    );
   }
 
   loadTasks(): void {
@@ -39,11 +47,53 @@ export class MyTasksPage implements OnInit {
   }
 
   filterTask(search: string): void {
+    this.search = search;
     this.filteredTasks = search === '' ? this.myTasks : this.myTasks.filter(task => this.selectTask(task.title, search));
+    if (this.selectedCategory !== '') {
+      this.filteredTasks = this.filteredTasks.filter(task => task.category.toLowerCase() === this.selectedCategory);
+    }
+    if (this.selectedStatus !== '') {
+      if (this.selectedStatus === 'solved') {
+        this.filteredTasks = this.filteredTasks.filter(task => task.status.finished === true);
+      }
+      if (this.selectedStatus === 'unsolved') {
+        this.filteredTasks = this.filteredTasks.filter(task => task.status.finished === false);
+      }
+    }
   }
 
   selectTask(title: string, search: string): boolean {
     return title.toLowerCase().includes(search.toLowerCase());
   }
 
+  selected(category: string): boolean {
+    return this.selectedCategory === category;
+  }
+
+  toggleSelected(category: string): void {
+    if (this.selectedCategory === category) {
+      this.selectedCategory = '';
+    } else {
+      this.selectedCategory = category;
+    }
+    this.filterTask(this.search);
+  }
+
+  selectTaskStatus(status: string): void {
+    if (status === this.selectedStatus) {
+      this.selectedStatus = '';
+    } else {
+      this.selectedStatus = status;
+    }
+
+    this.filterTask(this.search);
+  }
+
+  getSelectedTaskStatus(): string {
+    return this.selectedStatus;
+  }
+
+  categoryImage(category: string): string {
+    return '/assets/img/' + category.toLowerCase() + '.png';
+  }
 }

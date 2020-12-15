@@ -1,4 +1,4 @@
-<ion-content>
+<ion-content *ngIf="group">
 
   <app-page-layout>
 
@@ -19,7 +19,7 @@
     <div layout-position="footer">
       <ion-row>
         <ion-col style="padding: 0 !important;">
-          <app-chat-menu (sendMessageEmitter)="sendMessage($event)"></app-chat-menu>
+          <app-chat-menu (reloadChat)="loadChat()" type="group" [id]="groupId"></app-chat-menu>
         </ion-col>
       </ion-row>
     </div>

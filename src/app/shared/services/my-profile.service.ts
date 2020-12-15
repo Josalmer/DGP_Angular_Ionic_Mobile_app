@@ -21,7 +21,7 @@ export class MyProfileService {
 
   loadUserProfile(): Observable<any> {
     if (environment.simulated) {
-      return of({"user": {"username": "Jose", "age": 31, "genre": "male", "id": "soyyo"} }).pipe(
+      return of({ "user": { "username": "Juan Perez", "age": 31, "genre": "male", "id": "soyyo" } }).pipe(
         tap(res => {
           this.setUser(res.user);
         })
@@ -47,8 +47,20 @@ export class MyProfileService {
     return this.user;
   }
 
-  getUserGenre(): string{
+  getUserGenre(): string {
     return this.user.genre;
   }
 
+  getProgress(): Observable<any> {
+    if (environment.simulated) {
+      const categories = [
+        { name: 'Psicomotricidad', done: 1, total: 2 },
+        { name: 'Escritura', done: 4, total: 4 },
+        { name: 'Números', done: 8, total: 13 }
+      ];
+      return of({ categorias: categories });
+    } else {
+      return this.http.get('tasks/progress');
+    }
+  }
 }

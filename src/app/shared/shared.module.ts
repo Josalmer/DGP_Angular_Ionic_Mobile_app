@@ -8,7 +8,6 @@ import { PageLayoutComponent } from './components/page-layout/page-layout.compon
 import { chatMenuComponent } from './components/chat-menu/chat-menu.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
-
 @NgModule({
   imports: [
     IonicModule,
@@ -20,12 +19,14 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     PageLayoutComponent,
     chatMenuComponent,
     SearchBarComponent
+
   ],
   exports: [
     chatComponent,
     PageLayoutComponent,
     chatMenuComponent,
     SearchBarComponent
+
   ]
 })
 export class sharedModule { }

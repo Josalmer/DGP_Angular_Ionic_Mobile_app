@@ -3,8 +3,8 @@
   
   <app-page-layout>
  
-    <div layout-position="main">
-      <ion-row class="title-row">
+    <div layout-position="main" class="margin-bottom-tasks">
+      <ion-row class="title-row margin-tasks-page">
         <ion-col>
           <ion-title>
             Mis Tareas
@@ -16,22 +16,40 @@
           <app-search-bar [placeHolder]="'Buscar Tarea'" (searchEmitter)="filterTask($event)" ></app-search-bar>
         </ion-col>
       </ion-row>
+      <ion-row aria-label="Elige la categoria">
+        <ion-col [attr.aria-label]="category" size="4" class="category-filter-col" *ngFor="let category of categories" (click)="toggleSelected(category)"  [ngClass]="selected(category) ? 'selected-category' : ''">
+          <ion-img class="category-button-img" src="/assets/img/{{category}}.png"></ion-img>
+          <p class="category-name">{{category | uppercase}}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row aria-label="Elige tareas que tienes que hacer o que están hechas." style="margin-top:20px">
+        <ion-col size="6" class="chat-col">
+          <ion-button class="solved-task-filter" [strong] ="true" [color]="getSelectedTaskStatus() === 'solved' ? 'success' : 'light'" fill="solid" (click)="selectTaskStatus('solved')" >Resueltas</ion-button>
+        </ion-col>
+        <ion-col size="6" class="chat-col">
+          <ion-button class="solved-task-filter" [strong] ="true" [color]="getSelectedTaskStatus() === 'unsolved' ? 'success' : 'light'" fill="solid" (click)="selectTaskStatus('unsolved')" >No Resueltas</ion-button>
+        </ion-col>
+      </ion-row>
     </div>
-
+  
     <div layout-position="content">
-      <ion-row *ngIf="filteredTasks.length === 0">
-        <ion-col>
-          <h2>¡¡No hay tareas con esa selección!!</h2>
+      <ion-row aria-label="No hay tareas con esa selección. Inténtalo de nuevo escribiendo el nombre de la tarea." *ngIf="filteredTasks.length === 0" class="margin-bot-20">
+        <ion-col class="chat-col">
+          <ion-img class="img-tasks-not-found" src="/assets/img/confuso.png"></ion-img>
+          <h3 class="width-80">No hay tareas con esa selección. Inténtalo de nuevo escribiendo el nombre de la tarea.</h3>
         </ion-col>
       </ion-row>
       <div class="my-groups">
-        <ion-card class="task-card" *ngFor="let task of filteredTasks" (click)="navigateToTask(task.id_tarea)">
+        <ion-card [attr.aria-label]="task.title" class="task-card" *ngFor="let task of filteredTasks" (click)="navigateToTask(task.id_tarea)">
           <ion-row>
             <ion-col class="chat-col" size="3">
-              <ion-img src="../../../../assets/img/charla-grupo.png" class="group-img"></ion-img>
+              <ion-img [src]="categoryImage(task.category)" class="group-img"></ion-img>
             </ion-col>
-            <ion-col class="chat-col" size="8">
+            <ion-col class="chat-col" size="6">
               <h3 class="inside-group-card">{{task.title }}</h3>
+            </ion-col>
+            <ion-col class="chat-col" size="2">
+              <ion-img  *ngIf="task.status.finished"  class="solved-task" src="/assets/img/medalla.png"></ion-img>
             </ion-col>
           </ion-row>
           <ion-card-subtitle>
@@ -40,29 +58,5 @@
         </ion-card>
       </div>
     </div>
-
-    <!-- <div layout-position="content">
-      <ion-row *ngIf="filteredTasks.length === 0">
-        <ion-col>
-          <h2>¡¡No hay tareas con esa selección!!</h2>
-        </ion-col>
-      </ion-row>
-      <ion-card *ngFor="let task of filteredTasks;">
-        <div (click)="navigateToTask(task.id)">
-          <ion-card-header>
-            <ion-card-title></ion-card-title>
-          </ion-card-header>
-          <ion-item>
-            <ion-icon name="walk" slot="start"></ion-icon>
-            <ion-label>{{task.title}}</ion-label>
-          </ion-item>
-
-          <ion-card-content>
-            {{task.description_short}}
-          </ion-card-content>
-        </div>
-      </ion-card>
-    </div> -->
-
   </app-page-layout>
 </ion-content>
